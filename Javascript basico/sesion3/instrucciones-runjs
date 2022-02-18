@@ -1,0 +1,263 @@
+
+  // Javascript es un lenguaje estructurado
+  // Estructurado significa que tiene condicionales, iteraciones y que es secuencial
+  // condicionales tenemos if--else y switch
+
+  // sentencias if
+  // si se cumple una condición  >> haz algo
+  // y si no se cumple >> haz otra cosa
+
+  // ######### ejemplo1
+   /*
+  let x = 22
+  let resultado
+  //x= 'aaa'
+  if(x == 21) resultado = 'ok' 
+  else resultado = 'no es 21'
+  */
+  //resultado
+  // ######### ejemplo2 (venos si es true por tipo)
+   /*
+  let x2 = "3"
+  let resultado2
+  //typeof x2
+  //typeof resultado2
+  if(typeof x2 == 'number') resultado2 = 'Es de tipo número y es lo que buscábamos' 
+  else resultado2 = 'Es de tipo ' + typeof x2
+  //resultado2
+ */
+
+  /*
+    // esto se puede
+  */
+ 
+  // ######### ejemplo 3
+  // aunque no es lon habitual vemos como podemos comprobar si true es true o si false es true
+   /*
+  if(true) console.log('siempre verdad')
+  if(false) console.log('false')
+  else console.log('verdad siempre')
+ */
+  // ######## ejemplo 4 if...else  (si no es cierto es falso)
+
+  /*
+  if(true) console.log('verdad')
+  else console.log('falso')
+
+  if(false) console.log('falso')
+  else console.log('verdad')
+  */
+  //usamos llaves si tenemos más de una sentencia
+  /*
+  let x3 = 20
+  if(x3==20) {
+        console.log('uno')
+        console.log('otro uno')
+  } else {
+      console.log('otro')
+      console.log('más')
+  }
+ */
+
+  let x = 10
+  
+
+  //las comparaciones son con dos == para valores numéricos o strings
+  /*
+  let x = 'holaaaa'
+  if(x == 'hola') console.log('uno')
+  else console.log('otro')
+*/
+  /* 
+  la diferencia entre la igualdad débil (==) y estricta (===) es que en la estricta los objetos comparados tienen que ser del mismo tipo 
+  == >>>>>>>>>>>> compara el valor
+  === compara el valor y el tipo
+  */
+  /*
+  3 == 3
+  3 == '3'
+  3 === 3
+  3 === '3'
+  true === true
+  true === false
+  false === false
+  true !== false
+  false !== true
+  true !== true
+  3 > 2
+  3 >= 2
+  3 != 4
+  */
+  // Ejemplo if else if
+ 
+  /*
+  let x = 12
+  if(x==12) console.log('Es 12 linea 91')
+  else if (x==14) console.log('Es 14 linea 92')
+  else console.log('Es ' +  x)
+  */
+  // Condicionales Switch
+
+  // ejemplo
+  /*
+    let expr = 'Naranjas'
+    switch (expr) {
+      case 'Naranjas':
+        console.log('El kilogramo de naranjas cuesta $0.59.');
+        break;
+      case 'Manzanas':
+        console.log('El kilogramo de manzanas cuesta $0.32.');
+        break;
+      case 'Mangos':
+      case 'Papayas':
+        console.log('El kilogramo de mangos y papayas cuesta $2.79.');
+        break;
+      default:
+        console.log('Lo lamentamos, por el momento no disponemos de ' + expr + '.');
+    }
+*/
+    // Ejemplo Switch con operadores AND / OR
+
+    /*
+    var x
+    x = 11111
+    switch(true) {
+      case x > 0 && x < 100:
+        console.log('Entre cero y 100')
+        break
+      default: 
+        console.log('otro valor')
+        break
+    }
+    //Mejor así!
+    if(x > 0 && x < 100)  console.log('Entre cero y 100')  
+    else console.log('otro valor')
+  
+
+    // trabajamos con los operadores AND && y OR ||
+*/
+    //let x = 10
+    //let y = 10
+    // x > 0 && y > 0
+    //x > 0 || y > 0
+    //x > 0 && y > 10000
+    //x > 0 || y > 10000
+    //x != 11 && y== 10
+
+  // BUCLES
+  // Los bucles ofrecen una forma rápida y sencilla de hacer algo repetidamente. 
+  // Bucle for, desde una condición inicial, hasta una final, con un paso determenidado
+
+  // Ejemplo BUCLE FOR
+  /*
+  for (let step = 6; step < 10; step++) {
+    console.log('Camina un paso:' + step);
+  }
+  */
+  // Ejemplo BUCLE Do While ( haz mientras se cumple una condición)
+
+  /*
+  let i = 0
+  do { 
+    i += 1; console.log(i); 
+    } while (i < 5);
+  */
+  // no se deben hacer bucles infinitos probamos con un while i>0
+
+  // EJEMPLO BUCLE While: mientras sea cierta la condición
+
+ /*
+  let n = 0
+  let x = 0
+  
+  while (n < 3) {
+    n++ // me incrementas en 1 
+    x += n // suma a x el valor de n
+    //ES5
+    console.log('n:' + n + ', x:' + x)
+    //ES6
+    console.log(`n:${n}, x:${x}`)
+    console.log('------------------')
+  }
+  */
+
+  // DIFERENCIA entre break y continue
+  // break te saca del bucle en el que está
+      /*
+      let i = 0;
+      while (i < 5) {
+        i++;
+        if (i == 3) {
+          console.log('Me salgo en el 3')
+          break; // cambiar por continue y probar
+        }
+        console.log('Estoy en el i:' + i)
+      }
+      */
+    /*
+    for(let  i = 0; i<=10; i++) {
+      if(i==3) continue
+      console.log(i)
+    }
+     */
+
+  /* EJEMPLOS FOR IN, OF, EACH
+    for (variable in objeto)
+      instrucción
+  */
+
+  // EJEMPLO FOR IN
+  /*
+  var datospais = {
+    pais:"México", 
+    capital:"Ciudad de México",     poblacion:8900000}; 
+  var datofinal = "";
+  var x;
+
+  for (x in datospais) {
+     datofinal += datospais[x] + " ";
+  }
+  */
+  /*
+  let iterable = [10, 20, 30];
+
+  for (let value of iterable) {
+    value += 1;
+    console.log(value);
+  }
+   iterable
+  */
+
+  // ES6
+  /*
+  const arr = [1, 'two',];
+  arr.forEach(item => console.log(item));
+  */
+
+  // EJEMPLO FOR OF
+  /*
+  let iterable2 = "boo";
+
+  for (let value of iterable2) {
+    console.log('ES5: es la letra ' + value);
+    console.log(`ES6: es la letra ${value}`);
+  }
+  */
+
+/*
+  Diferencias entre declarar variables con var, o no declararlas
+  Como hemos dicho, en Javascript tenemos libertad para declarar o no las variables con la palabra var, pero los efectos que conseguiremos en cada caso serán distintos. En concreto, cuando utilizamos var estamos haciendo que la varible que estamos declarando sea local al ámbito donde se declara. Por otro lado, si no utilizamos la palabra var para declarar una variable, ésta será global a toda la página, sea cual sea el ámbito en el que haya sido declarada.
+*/
+   /*
+    var numero = 2 
+    function miFuncion (){ 
+      let numero = 19 
+      console.log(numero)
+    } 
+    console.log(numero) 
+    miFuncion() 
+    console.log(numero) 
+*/
+
+
+

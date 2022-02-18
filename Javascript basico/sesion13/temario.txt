@@ -1,0 +1,18 @@
+
+* Introducción al Linting
+  * Principales inconvenientes de JS a la hora de mantener una aplicación
+  * Introducción a ESLint
+  * Planteamiento de reglas comunes a través de linting
+  
+* Implementación de linting en un proyecto JS
+  * Creación de archivo de configuración EsLint desde cero
+  * Principales características de un archivo de configuración de EsLint
+  * Instalación de Eslint para generación de archivos de configuración
+  * Creación de archivo de configuración EsLint a través del CLI
+  * Extensión de reglas públicas
+  * Activación y desactivación de reglas
+  * Creación de script en Package.json para ejecución de linting
+  * Ejecución de linting
+  * Entendiendo el informe de salida de linting al encontrar problemas
+  * Creación de script en Package.json para ejecución y arreglo de código automático con linting
+  * Viendo los cambios realizados en nuestro código

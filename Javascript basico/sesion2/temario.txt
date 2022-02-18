@@ -1,0 +1,18 @@
+2ª Sesión:
+* Sintaxis, variables y palabras reservadas de JS
+  * El tipado inferido de Javascript
+  * Principales ventajas de un tipado inferido
+  * Principales desventajas de un tipado inferido
+  * Tipos primitivos en JS
+    * number
+    * string
+    * boolean
+  * Asignación de valores a variables
+  * Diferencias y similitudes entre null, undefined, false y 0 en JS
+  * Var, Let o Const ¿Cuándo debemos usar cada una?
+  * Escritura dinámica
+  * Haciendo uso del operador Typeof
+  * Notación punto y coma, punto, corchetes y llaves
+  * Listas
+  * Objetos
+  * Fechas

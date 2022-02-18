@@ -1,0 +1,11 @@
+9ª Sesión:
+* Manejo de errores
+  * Manejo de errores en JavaScript
+  * Throw
+  * Protección de código a través de Try ... Catch
+  * InternalError, SyntaxError, TypeError, RangeError y ReferenceError
+  
+* Gestión de Logs
+  * Configuración de logs en un proyecto node
+  * Definiendo el nivel de logs
+  * Ubicando los logs en un archivo

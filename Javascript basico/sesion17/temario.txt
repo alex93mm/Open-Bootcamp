@@ -1,0 +1,11 @@
+17ª Sesión:
+* Usando Geolocalización
+  * Etiquetas HTML para crear un mapa
+  * Ubicación de chichetas de localización a través de latitud y longitud
+  * Introducción a la API de geolocalización de usuario
+  * Uso de geolocalización para obtener la posición del usuario
+
+https://developers.google.com/maps/documentation/javascript/geolocation#maps_map_geolocation-javascript
+
+  * Atributos principales
+  * Gestión y manejo de errores 

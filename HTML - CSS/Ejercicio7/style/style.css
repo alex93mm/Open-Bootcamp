@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url(../assets/img/wallpaper.jpg) #f1a1a3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    background-color: #FFF;
+    max-width: 400px;
+    padding: 30px;  
+    border-radius: 20px;
+    margin: 20px;
+}
+
+h1{
+    margin-bottom: 30px;
+    font-weight: 500px;
+}
+
+.login-form__field{
+    margin-bottom: 10px;
+}
+
+.login-form__field input{
+    width: 230px;
+    max-width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.login-form__field input[type=checkbox]{
+    width: auto;
+    height: 20px;
+    width: 20px;
+
+
+[for="check"]{
+    font-size: 13px;
+    position: relative;
+    top: -5px;
+    margin-left: 7px;
+}
+
+.login-form__button{
+    display: flex;
+    justify-content: center;
+}
+
+.login-form__button--button{
+    width: 100px;
+    max-width: 33.3%;
+    padding: 10px;
+    color: #FFF;
+    font-weight: bold;
+    background-color: salmon;
+    border-radius: 10px;
+    border: 0px;
+}
+
+input#user-mail{
+    background: transparent;
+    background-image: url(../assets/icon/user.svg);
+    background-repeat: no-repeat;
+    background-position: 3px;
+    padding-left: 30px;
+}
+
+input#user-pass{
+    background: transparent;
+    background-image: url(../assets/icon/pass.svg);
+    background-repeat: no-repeat;
+    background-position: 3px;
+    padding-left: 30px;
+}

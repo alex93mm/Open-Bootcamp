@@ -1,0 +1,187 @@
+
+    // qué es una función
+    
+    /*
+      Las funciones nos permiten agrupar líneas de código en tareas con un nombre, para que, posteriormente, podamos hacer referencia a ese nombre para realizar todo lo que se agrupe en dicha tarea. Para usar funciones hay que hacer 2 cosas:
+
+      Declarar la función: Preparar la función, darle un nombre y decirle las tareas que realizará.
+      Ejecutar la función: «Llamar» a la función para que realice las tareas de su contenido.
+    */
+
+    /* -----
+    // Declaración de la función "saludar"
+    function hola() {
+      // Contenido de la función
+      console.log("Hola, soy una función");
+    }
+
+    // Ejecuctamos la función
+    hola();
+    -------*/
+
+    /*
+    A las funciones se les pueden pasar parámetros, que no son más que variables que existirán sólo dentro de dicha función, con el valor pasado desde la ejecución.
+    */
+
+    /* ----
+    function hola(name) {
+      // Contenido de la función
+      console.log("Hola " + name + ", soy una función");
+    }
+    hola('Juan');
+    ----*/
+
+    // ES6 y los parámetros por defecto
+    /*
+    function hola( name = 'sin nombre') {
+      // Contenido de la función
+      console.log("Hola " + name + ", soy una función");
+    }
+    hola();
+    */
+
+    // devolver un resultado
+
+    /*
+    function suma(a, b) {
+      return a + b;
+      console.log("Aquí no llegaremos."); 
+    }
+    var resultado = suma(1, 2)
+    */
+    
+    /*
+    const suma = (a,b) => a + b;
+    let resultado = suma(1, 5)
+    resultado
+    */
+
+    // Las funciones también pueden ser tipos de datos:
+    // typeof function () {}; // 'function'
+
+    /*
+    const suma = (a,b) => a + b;
+    typeof suma
+    */
+    //Estamos creando una función en el interior de una variable, lo que nos permitirá posteriormente ejecutar la variable.
+  
+    // ################# Funciones anónimas
+    /*
+    Las funciones anónimas o funciones lambda son un tipo de funciones que se declaran sin nombre de función y se alojan en el interior de una variable y haciendo referencia a ella cada vez que queramos utilizarla:
+    */
+
+    /*
+    const saludo = function () {
+      return "Hola";
+    };
+
+    const otroSaludo = () => "hola"
+    */
+
+  // ################# Funciones Callback o retrollamadas
+  // Consiste en pasar por parámetro una función a otra función
+
+    // tenemos una función B
+
+    /*
+    const b = function () {
+      console.log("Somos la función b");
+    };
+
+    const e = function () {
+      console.error("Error");
+    };
+
+    const miFuncion = function (callback, callbackError, option = 0) {
+      if (option > 1) callback();
+      else callbackError();
+    };
+    
+    let o = 2
+    miFuncion(b,e,o);
+    */
+
+  // #################  Arrow functions ES6
+
+  //const f = (a, b) => a + b; 
+
+  // Función autoejecutable con parámetros
+  /*
+  (function (name) {
+    console.log(`¡Hola, ${name}!`);
+  })("pepe");
+  */
+
+// uso de this
+/*
+const a = function () {
+  console.log(this);
+};
+const b = () => {
+  console.log(this);
+};
+
+a(); // Window
+*/
+
+  // ################### asincronía
+
+  // ejemplo de coódigo bloqueante
+
+          /*
+              const repeticiones = 10000000;
+              const num = []
+              for (let i = 0; i < repeticiones; i++) {
+                const number = 1 + Math.floor(Math.random() * 6);
+                num.push(num);
+                if (number === 6) {
+                  console.log("ERROR");
+                  break;
+                }
+              }
+              console.log(num);
+        */
+  // ## ...........................  
+
+  /*
+  Las promesas son un concepto para resolver el problema de asincronía de una forma mucho más elegante y práctica que, por ejemplo, utilizando funciones callbacks directamente.
+
+Como su propio nombre indica, una promesa es algo que, en principio pensamos que se cumplirá, pero en el futuro pueden ocurrir varias cosas:
+  
+  */
+    /*
+    const d = () => "fin";
+
+    fetch(d)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .finally(() => console.log("Terminado."))
+    .catch(error => console.error(data));
+    */
+
+
+  /* Implementación con promesas */
+
+  /*
+const doTask = (repeticiones) => new Promise((resolve, reject) => {
+  const num = [];
+  for (let i = 0; i < repeticiones; i++) {
+    const number = 1 + Math.floor(Math.random() * 6);
+    num.push(number);
+    if (number === 6) {
+      reject({
+        error: true,
+        message: "Se ha sacado un 6"
+      });
+    }
+  }
+  resolve({
+    error: false,
+    value: num
+  });
+});
+
+doTask(100000)
+  .then(result => console.log("Tiradas correctas: ", result.value))
+  .catch(err => console.error("Ha ocurrido algo: ", err.message));
+*/

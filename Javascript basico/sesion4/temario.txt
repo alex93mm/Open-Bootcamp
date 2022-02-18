@@ -1,0 +1,22 @@
+* Trabajando con cadenas de texto
+
+  * ¿Comillas dobles o comillas simples?
+  * Cadenas de texto con múltiples líneas
+  * Usando comillas invertidas para representar valores de variables a través de interpolación
+  * Inyección de expresiones dentro de cadenas de texto
+  * Uso de comillas invertidas para representar plantillas HTML e interpolar variables dentro de etiquetas
+
+  * Obtener la longitud de una cadena de texto
+  * Extraer una porción de una cadena de texto con .slice(), .substring() y .substr()
+  
+  * Reemplazo de contenido de una cadena de texto
+  * Convirtiendo a mayúsculas o minúsculas un texto completo
+  * Formas de concatenación de cadenas de texto
+  * Eliminar espacios en blanco de una cadena de texto
+  * Obtener caracteres según su posición
+  * Obtener caracteres tratando a las cadenas de texto como una lista de caracteres
+  * Formas de obtener la posición de una palabra dentro de una cadena de texto
+  * Breve introducción a las expresiones regulares
+  * Búsqueda de coincidencias, a partir de una expresión regular, dentro de una cadena de texto
+  * Conocer si una cadena de texto contiene una palabra
+  * Conocer si una cadena de texto comienza o termina por una palabra

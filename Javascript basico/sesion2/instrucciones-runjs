@@ -1,0 +1,223 @@
+    
+    // El tipado inferido de javascript
+    // Si vuela, anda y se comporta como un pato, es un pato
+
+    /*
+    var cosa = "3"
+    typeof cosa
+    cosa = 3
+    typeof cosa
+     */
+    /*
+    Las palabras actualmente reservadas por JavaScript son: break , case , catch , continue , default , delete , do , else , finally , for , function , if , in , instanceof , new , return , switch , this , throw , try , typeof , var , void , while , with .
+    */
+
+    /*
+    let cosa = 2
+    let return = 2
+  */
+    // Ejemplo de como un tipo inferido entiende que tipo tiene cada variable
+    // hay otras opciones como Type Script que si permite un tipado más fuerte
+
+  /*
+    var lasuma = function(parametro1, parametro2){
+        var suma = parametro1 + parametro2
+        return suma
+    }
+    lasuma("HOLA "," CARLOS")
+    */  
+    // ejemplo de un problema que nos puede suceder con un tipo inferido
+    
+    /*
+    var pasaMayusculas = function(parametro1) {
+      if(typeof(parametro1) != 'string') return 'ojito'
+      var mayusculas = parametro1.toUpperCase()
+      return mayusculas
+    }
+    pasaMayusculas('holaaa carlos')
+    pasaMayusculas(3)
+    */
+
+    // ESTRUCTURA DINÁMICA
+    /*
+  Para comprender mejor la escritura dinámica se debe aclarar que existen 2 tipos de datos:
+  
+    Primitivos y objetos
+    
+    - Primitivos: tipos de datos que apuntan a un solo valor, estos a su vez se clasifican en 5 tipos:
+
+  * Strings (Cadenas de texto);
+  * Booleanos var Opcion = false;
+  * Undefined 
+  * NULL
+  * Number;
+
+*/
+    // ejemplos de datos primitivos
+    /*
+    let num = 10
+    let str = "texto"
+    let bol = true
+    let und = undefined
+    let nul =  null;
+
+    typeof(str)
+    typeof(num)
+    typeof(bol)
+    typeof(nul)
+    typeof(und)
+    */
+    
+    // si declaramos una variable y no le asignamos un valor
+
+    /*
+    let xx
+    typeof(xx)
+    xx = 3
+    typeof(xx)
+    */
+
+    // variables locales y globales
+    // En javascript una variable declarada fuera de una función es una variable global y siempre es pasada por referencia a otros ámbitos
+  // vamos a ver la diferencia entre variable local y global
+
+  // Ejemplo 1
+
+   /*
+    var i = "global";
+   // typeof(i)
+    function foo() {
+        i = "local";
+        console.log('qué contiene i? : ' + i);
+    }
+    foo();
+    console.log('qué contiene ahora i? : ' + i); // local
+    */
+
+    // ojo con esto
+    // Ejemplo 2: vemos como no accedemos al valor
+
+    /*
+    function foo() {
+      var f = "local";
+    }
+    console.log(f); // ReferenceError: i is not defined
+    */
+    // ES6 y let
+    /*
+    Un bloque en JavaScript se puede entender como «lo que queda entre dos corchetes» {}, ya sean definiciones de funciones o bloques if, while, for y loops similares. Si una variable es declarada con let en el ámbito global o en el de una función, la variable pertenecerá al ámbito global o al ámbito de la función respectivamente, de forma similar a como ocurría con var.
+    */
+
+    // Ejemplo let
+
+    /*
+    var indice = 17
+    function foo() {
+        if(true) {
+            let indice = 1;
+            //console.log(indice); 
+        }
+       // console.log(i); // ReferenceError: i is not defined
+    }
+    foo();
+    console.log(indice); 
+   */
+  /* 
+    Debido a este comportamiento, muchos desarrolladores se inclinan hacia let como la forma predeterminada de declarar variables en JavaScript y abandonar var (1, 2, 3), pues el scope más específico previene la sobreescritura de variables de forma accidental al declarar variables sin ensuciar el scope superior.
+*/
+  // la instrucción const
+  // ejemplo
+
+  /*
+  const i = 0.186;
+  i = 1; 
+ */
+
+  // * Los objetos: Colección de tipos de datos primitivos u otros objetos.
+  // Colección de datos datos primitivos
+
+  // Ejemplo de Array o Lista
+
+ /*
+  let DiasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  DiasSemana.length
+  DiasSemana[1] // 0,1,2... 6
+  DiasSemana[7]
+  DiasSemana.push('Doble Domingo')
+  DiasSemana[7]
+  DiasSemana
+  */
+
+  // Objetos
+  
+  let obj = {
+    numero : 14,
+    texto :"Nuevo texto",
+    objHijo : {
+      numeroh: 2000,
+      textoh: "Nuevo texto hijo asdasdasdsa"
+    }
+  }
+  
+  //obj.numero
+  //obj.objHijo.numeroh
+  //obj['objHijo']
+  //obj['objHijo'].textoh
+  //obj.objHijo.textoh
+
+    // Ejercicio a realizar
+    /* 
+    let persona = {
+    nombre: ['Bob', 'Smith'],
+    edad: 32,
+    genero: 'masculino',
+    intereses: ['música', 'esquí'],
+    bio: function () {
+    console.log(this.nombre[0] + '' + this.nombre[1] + ' tiene ' + this.edad + ' años. Le gusta ' + this.intereses[0] + ' y ' + this.intereses[1] + '.');
+    },
+    saludo: function() {
+    console.log('Hola, Soy '+ this.nombre[0] + '. ');
+    }
+    };
+
+    persona.nombre
+    persona.nombre[0]
+    persona.edad
+    persona.intereses[1]
+    persona.bio()
+    persona.saludo()
+    */
+
+    /* añadimos
+      nombre : {
+      pila: 'Bob',
+      apellido: 'Smith'
+      },
+      */
+    /*
+      persona.nombre.pila
+      persona['nombre']['pila']
+    */
+
+    // Fechas, es un tipo predefinido de JS
+
+   
+   // let miFecha = new Date();
+   // miFecha
+   
+  /*
+    const f = new Date();
+    f.getDay(); // 2 (Martes)
+    f.getDate(); // 30
+    f.getMonth(); // 0 (Enero)
+    f.getFullYear(); // 2018
+    f.getHours(); // 15
+    f.getMinutes(); // 30
+    f.getSeconds(); // 10
+    f.getMilliseconds(); // 999
+    f.getTimezoneOffset(); // 0
+    f.getTime(); // 1517326210999 (Tiempo Unix)
+   */
+
+
+

@@ -1,0 +1,69 @@
+
+  /*
+  ¿Qué son los objetos? 
+  En Javascript, existe un tipo de dato llamado objeto. 
+  No es más que una variable especial que puede contener más variables en su interior. De esta forma, tenemos la posibilidad de organizar múltiples variables de la misma temática dentro de un objeto.
+  */
+
+  //const objeto = new Object(); // Esto es un objeto «genérico» vacío
+  
+  // Normalmente lo hacemos de manera literal
+ 
+        /*
+              const persona = {
+                nombre: "Pepe",
+                edad: 99,
+                id: 10,
+              };
+       */
+
+  // accedemos a sus propiedades
+
+              //persona.nombre
+              //persona.edad
+              //persona.id
+
+  // podemos acceder con corchetes 
+              //persona['nombre']
+
+  // podemos cambiar los valores
+  
+             // persona.nombre = 'Carlos'
+              //persona['nombre']
+             // persona
+  
+  // para copiar un objeto
+    /*
+            const jorge = persona
+            jorge.nombre = 'Jorge'
+            jorge.edad = 89
+            jorge.id = 12
+
+            jorge
+*/
+  
+  var objs = [ 
+      { first_nom: 'Lazslo', last_nom: 'Jamf' , id: 23     },
+      { first_nom: 'Pig',    last_nom: 'Bodine', id: 27    },
+      { first_nom: 'Pirate', last_nom: 'Prentice', id: 1  }
+  ];
+
+
+  function compare( a, b ) {
+    if ( a.id < b.id ){
+      return -1;
+    }
+    if ( a.id > b.id ){
+      return 1;
+    }
+    return 0;
+  }
+
+  objs.sort( compare );
+  objs
+
+
+
+
+
+

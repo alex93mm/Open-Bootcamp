@@ -1,0 +1,29 @@
+* Introducción a la interacción de JS con HTML
+
+  * Integración del script en un documento HTML
+  * La importancia del orden de los scripts en HTML
+  * Instalación de dependencias con npm: http-server
+  * Añadiendo un JS a un HTML
+  * Añadiendo scripts de terceros a un HTML
+  * Creación de un script en package.json para despliegue con http-server en localhost
+  * Ejecución de script y visualización en el navegador
+
+
+* Gestión de eventos
+  * ¿Qué es el Binding?
+  * ¿Qué es un Evento?
+  * Eventos por defecto
+  * Evento onSubmit y otros eventos lanzados desde HTML
+  * Creación y activación de eventos propios
+  * ¿Qué es JQuery?
+  * Adición de JQuery a un proyecto
+  * Uso de JQuery para interactuar con la vista HTML
+  * Manejo de eventos en cajas de diálogo
+  
+* Mostrando Alertas en el navegador
+  * Alertas desde JS
+
+* Trabajando con Console Log
+  * Concatenar texto y valor de una variable
+  * Mostrar el contenido de una lista
+  * Mostrar el contenido de un objeto o lista en forma de tabla

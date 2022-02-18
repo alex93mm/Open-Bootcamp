@@ -1,0 +1,70 @@
+
+    // Necesitamos saber manejar errores, en el mundo real ocurren cosas inesperadas o esperadas pero inevitables
+    // Es una buena práctica capturar las excepciones
+
+    // Por ejemplo podemos tener un error del tipo:
+
+    /*
+        let a = ["Pato","Gallina","Perro"]
+        a = null
+        let b = a[0] /// lanza un TypeError
+        console.log("hola")
+     
+  /* 
+  En este caso hemos visto que generamos un error del tipo 
+  TypeError
+  
+  Tenemos los siguientes Tipos de error:
+  
+  > InternalError; error interno del motor de JS
+    *"demasiados casos del switch",
+    *"demasiados paréntesis en la expresión regular",
+    *"iniciador de arreglo demasiado grande",
+    *"demasiada recursividad".
+
+  > ReferenceError
+    El objeto ReferenceError representa un error cuando se hace referencia a una variable inexistente.
+  */
+   //X / 2
+  /*
+  > RangeError
+    El objeto RangeError indica un error cuando un valor no se encuentra dentro de un rango de valores permitidos.
+
+  > SyntaxError
+    El objeto SyntaxError representa un error cuando se trata de interpretar codigo sintacticamente invalido.  
+
+    let x = new String())
+
+
+    Para poder capturar las execepciones tenemos
+    try... catch
+  
+    Si vemos el siguiente caso:
+*/
+
+          class miError extends Error {
+            message = 'Este es mi error personalizado'
+          }
+  
+          try {
+            //throw new Error('Error gravísimo vuelva mañana!') 
+            throw new miError('nuevo error')
+            let a = []
+            a = null
+            let b = a[0] /// lanza un TypeError
+          }  
+          catch(err) {
+            if(err instanceof TypeError) console.error('Perdone UD. Se ha producido un error, contacte con xxxx') 
+            else throw err
+          }
+          console.log("hola")
+          console.log("sigue la vida")
+          
+          console.table(["apples", "oranges", "bananas"]);
+          console.info('Esto es una información')
+          console.warn('ojo')
+          console.error('error')
+      
+/*
+  Ahora nos vamos a crear un proyecto de nodeJS
+*/

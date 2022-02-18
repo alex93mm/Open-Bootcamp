@@ -1,0 +1,100 @@
+
+// tipado
+/*
+var cosa = 3
+typeof cosa
+
+cosa = 'hola'
+typeof cosa
+*/
+
+//Diferencias entre ES5 y ES6
+
+//Además de la declaración de las variables con var cosa = “cosa”;
+//Podemos usar para declarar:
+
+//ES5
+//var name =  "nacho"
+
+//name = "pepe"
+//console.log(name)
+
+//ES6
+//const name = "Nacho"
+//let name = "Nacho"
+
+
+//ES5
+//var add = function(a,b) { return a+b;}
+
+//ES6
+//Se simplifica mucho con las arrow functions
+//let add = (a,b) => a+b;
+
+//Mejora para trabajar con valores por defecto
+//ES5
+/*
+
+    function(a,b) {
+    if(!a) a=1;
+    if(!b) b= 1;
+    return a+ b;
+    }
+
+  //ES6
+  function(a=1, b=1) { return a+b};
+*/
+
+/*
+Concatenación de strings
+ES5 
+var nombre = ‘bob’;
+console.log(’nombre: ’ +  name + “1”);
+
+ES6
+Usamos los back ticks 
+var name = “bob”
+console.log(`nombre: ${name}!);
+*/
+
+//ejemplo de objeto
+/*
+let persona = {
+  nombre: ['Bob', 'Smith'],
+  edad: 32,
+  genero: 'masculino',
+  intereses: ['música', 'esquí'],
+  bio: function () {
+     console.log(this.nombre[0] + '' + this.nombre[1] + ' tiene ' + this.edad + ' años. Le gusta ' + this.intereses[0] + ' y ' + this.intereses[1] + '.');
+  },
+  saludo: function() {
+    console.log('Hola, Soy '+ this.nombre[0] + '. ');
+  }
+};
+
+
+persona.nombre
+persona.nombre[0]
+persona.edad
+persona.intereses[1]
+
+
+persona.bio()
+persona.saludo()
+*/
+
+/* añadimos
+  nombre : {
+  pila: 'Bob',
+  apellido: 'Smith'
+},
+*/
+
+/* vemos 
+persona.nombre.pila
+persona['nombre']['pila']
+*/
+
+
+
+

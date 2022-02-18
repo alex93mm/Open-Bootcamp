@@ -1,0 +1,3 @@
+export const FILTER_ALL = 'SHOW_ALL';
+export const FILTER_ACTIVE = 'FILTER_ACTIVE';
+export const FILTER_COMPLETED = 'FILTER_COMPLETED';

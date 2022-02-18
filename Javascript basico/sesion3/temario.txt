@@ -1,0 +1,13 @@
+
+* Estructuras de control
+  * Las sentencias If, else
+  * Las comparaciones en JS
+  * Sentencia Switch
+  * ¿Qué es un bucle?
+  * ¿Qué tipos de bucles existen y cómo se declaran?
+  * El bucle For, Foreach, For... in y For... Of
+  * El bucle while
+  * El bucle Do While
+  * Uso de continue y break
+  * ¿Qué es el ámbito de un bucle?
+  * Rotulando los bucles

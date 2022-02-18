@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+dialog[open] {
+    position: fixed;
+    width: 50%;
+    max-width: 750px;
+    top: 10px;
+}
+dialog::backdrop {
+    background-color: rgba(255,0,0,0.8);
+}
+    </style>
+</head>
+<body>
+
+<p>Una necesidad común en casi cualquier aplicación Web es la de mostrar diálogos al usuario. Se trata de los típicos "pop-ups" que surgen en la aplicación de vez en cuando con múltiples propósitos: notificaciones, preguntar algo al usuario, mostrar los detalles de un registro en una base de datos... Casi cualquier cosa que se te pueda ocurrir.</p>
+
+<button id="btn1">Mostrar diálogo</button>
+
+<dialog id="Dialogo">
+    <h2>¡ATENCIÓN!</h2>
+    <p>Se ha producido un problema en la aplicación.</p>
+    <input type="text" id="num">
+    <button id="cerrar">Cerrar</button>
+    <button id="aviso">Aviso</button>
+    <button id="conf">Confirma</button> 
+</dialog>
+
+<h2>Nombre:</h2>
+<input type="text" id="nombre">
+<button id="cons1">Muestra en consola</button>
+
+<script>
+    
+    const dialogo = document.getElementById('Dialogo');
+    let p = document.getElementById("btn1"); 
+    p.onclick = () => dialogo.show();
+
+    let c = document.getElementById("cerrar");
+    let a = document.getElementById("aviso"); 
+    let conf = document.getElementById("conf"); 
+    let num = document.getElementById("num");
+    
+    c.onclick = (e) => dialogo.close(); 
+    a.onclick = (e) => alert("Esto es un aviso especial");
+    
+    let q = document.getElementById("conf"); // Encuentra el elemento "p" en el sitio
+    q.onclick = muestraAlerta; // Agrega función onclick al elemento
+        
+    function muestraAlerta(evento) {
+        const x = confirm("Aceptas los términos?");
+        num.value =x;
+    }
+
+    let nombre = document.getElementById("nombre");
+    let m = document.getElementById("cons1"); 
+    m.onclick = () => console.log(`Hola ${nombre.value}, ¿has aceptado?: ${num.value}`);
+
+    console.log(["apples", "oranges", "bananas"]);
+    console.warn(["apples", "oranges", "bananas"]);
+    console.error(["apples", "oranges", "bananas"]);
+    console.table(["apples", "oranges", "bananas"]);
+
+</script>
+</body>
+</html>

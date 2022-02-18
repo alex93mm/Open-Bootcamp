@@ -1,0 +1,272 @@
+  
+      /*
+        ################## las clases en JS       
+        
+        Ahora que ya dominamos las bases de nuestra programación y nuestro código crece y crece, vamos a necesitar acudir a las "clases", que desde ES6 tenemos a nuestra disposición.
+
+        No son clases nativas, el motor de JS usa los antigüos prototipos, es lo que se llama "Azucar Sintáctico", porque hace más dulce y fácil la forma de trabajar con nuestro código.
+         
+        Una clase es un concepto abstracto, que se traduce en un objeto de JS y que luego nos permite personalizar con las propiedades que necesitemos, es una especie de objeto "plantilla o modelo".
+        */
+
+        // Declaramos una clase de Ave
+        //class Ave {} // las clases la declaramos con la primera letra en mayúsculas
+
+        // Nos creamos una INSTANCIA de la clase o modelo AVE, por ejemplo una gallina
+
+        //const gallina = new Ave();
+
+        // en las clases tenemos métodos y propiedades
+      
+        /*
+        class Persona {
+          nacionalidad = "española"
+          saludo() { return "Hola"}
+        }
+        const Carlos = new Persona;
+        Carlos.nacionalidad
+        Carlos.saludo()
+        */
+
+        /* los constructures de clase
+          > Es un método que se ejecuta al declarar con New una clase, solo puede haber uno*/
+  
+         /*
+          class Coche {
+              constructor(a, b) {
+                this.propiedad1 = a
+                this.propiedad2 = b
+                console.log('pasa por aqui')
+              }
+              metodo() {
+                console.log(this.propiedad1 + this.propiedad2)
+              }
+          }
+
+          miCoche = new Coche(1,20)
+          miCoche.metodo()
+         */
+
+          // los métodos static son accesibles desde la clase
+          // Ejemplo static
+          
+          /*
+          class Persona {
+            constructor() {
+              console.log("Hemos creado una nueva persona");
+              this.nacionalidad = "Sin definir";
+            }
+            saludo() { return "Hola/Hello"}  
+            static tipo() { // los métodos static siempre accesibles sin new()
+              return "Soy una persona";
+            }  
+          }
+
+          //Persona.saludo()
+          Persona.tipo() // static >>> podemos acceder sin instanciar el objeto
+          const Carlos = new Persona;
+          Carlos.saludo()
+          Carlos.nacionalidad
+          //Carlos.tipo()
+          Carlos.nacionalidad =  "Española"
+          Carlos.nacionalidad
+          */
+ 
+          // Podemos definir propiedades fuera del constructor
+        
+          /*
+          class Persona {
+            pelo = 'negro'
+            constructor() {
+              console.log("Hemos creado una nueva persona");
+            } 
+          }
+          const carlos = new Persona;
+
+          carlos.pelo
+          carlos.pelo ="rubio"
+          carlos.pelo
+          */
+     
+        // ################ propiedades y métodos privados
+        
+          /*
+           class Persona {
+            #id = '465465454-p' //propiedad privada
+            constructor(p) {
+              this.pass = p
+              console.log("Hemos creado una nueva persona");
+            }
+            #dameid() { return this.#id} // método privado
+            idpublico() { 
+              if(this.pass == "mipass")return this.#dameid()
+              else return "acceso denegado"
+            }    
+          }
+          const carlos = new Persona('mipass');
+          //carlos.#id
+          //carlos.#dameid()
+          carlos.idpublico()
+        */
+
+        /*
+        // ######################## ámbitos, clase y método
+        Tenemos el ámbito de método, las variables declaradas dentro del método serán accesibles solo en el método, mientras que "this" es accesible a nivel de clase
+        */
+
+        /*
+          class Coche {
+            constructor() {
+              //const tipo = "Sedan";
+              this.tipo = "Ranchera"
+              console.log("Mi tipo de coche es " + this.tipo);
+            }
+            arranca(a) {
+              //let llave = a
+              this.llave = a
+              console.log(`En marcha con ${this.llave}!`) 
+            }
+            dameTipo() {
+             // console.log(`El tipo es: ${this.tipo} y tiene ${llave}`);
+              console.log(`El tipo es: ${this.tipo} y tiene ${this.llave}`);
+              console.log(`El tipo es: ${this.tipo} `);
+            }
+          }
+
+          const miCoche = new Coche(); 
+          miCoche.tipo
+          miCoche.arranca(1)
+          miCoche.dameTipo()
+        */
+      
+           // #############################  getters 
+          // Los getters son la forma de definir propiedades computadas de lectura en una clase
+      // proiedades computadas son las que pueden cambiarse al instanciar la clase
+        /*
+            class Coche {
+              constructor(n) {
+                this._tipo = n;
+              }
+              get miTipo() {
+                return "Mi coche es de tipo " + this._tipo;
+              }
+            }
+            const miCoche = new Coche("Gasolina");
+           // miCoche
+            miCoche.miTipo
+
+            // esto no funciona veremos los setters
+            miCoche.miTipo = "Eléctrico"
+            miCoche.miTipo
+        */
+          
+      // #############################  Setters 
+      // mismo concepto de getters (get) pero esta vez para stablecer información
+
+         // Ejemplo de setters
+
+        /*
+           class Coche {
+              constructor(n) {
+                this._tipo = n;
+              }
+              get miTipo() {
+                return "Mi coche es de tipo " + this._tipo;
+              }
+              set miTipo(n) {
+                this._tipo = n;
+              }
+            }
+
+            const miCoche = new Coche("Gasolina");
+            //miCoche
+            miCoche.miTipo
+            miCoche.miTipo = "Diésel"
+            miCoche.miTipo
+       */
+
+        // ########## Herencia de clases
+        // Con la herencia podemos establecer una "jerarquía" de elementos y reutilizar características dependiendo del nivel de cada elemento.
+        // Desde ES6 podemos "extender" una clase 
+
+          // Ejemplo de herencia
+          // Clase de primer nivel o padre
+      /*
+        class Automovil { // Clase Padre
+          constructor() {
+            this.marca
+            console.log("Constructor de la clase padre Automovil.");
+          }
+          arrancar() {
+            console.log("Vehículo en marcha!");
+          }
+        }
+
+        // Clases hijas
+        class Coche extends Automovil {
+          constructor() {
+            super();
+            console.log("Constructor de coche, heredado de padre");
+          }
+        }
+
+        class Camion extends Automovil  {
+          constructor(ruedas, tipo) {
+            super();
+            this.ruedas = ruedas
+            this. tipo = tipo
+            console.log(`Soy un camión de ${ruedas} ruedas y de tipo ${tipo}"`);
+          }
+        }
+        
+        //const miCoche = new Coche()
+        //miCoche.arrancar()
+        //miCoche.marca = "Seat"
+        //miCoche.marca
+
+        //const miCamion = new Camion(8, 'Frigo')
+        //miCamion.arrancar()
+    */
+
+      // Polimorfismo
+      // Es la posibilias de llamar métodos en común de diferentes objetos
+
+      //Ejemplo de polimorfismo
+        
+      /*
+        class Clase1 {
+          descripcion() { console.log("Descripción de la clase 1");}
+        }
+
+        class Clase2 {
+          descripcion() {console.log("Descripción de la clase 2");}
+        }
+
+        const des = (obj) => { 
+          console.log(typeof obj)
+          console.log(typeof obj.descripcion)
+          if(typeof obj.descripcion == 'function') obj.descripcion()
+        }
+        
+        const c1 = new Clase1()
+        const c2 = new Clase2()
+        
+        //c1.descripcion()
+        //c2.descripcion()
+        des(c1)
+       // descripcion(c2)
+     */
+
+/*
+    Javascript no tiene "interfaces" derivado de su tipo inferido, pero si existen en TypeScript, el superset de Javascript que implementa el tipado estático
+
+    TypeScript ofrece la posibilidad de trabajar con interfaces, que son un tipo de construcción utilizada en la Programación Orientada a Objetos.
+
+
+            interface sumergibleInterface {
+              tiempoMaxBajoElAgua: number;
+              profundidadMaxima: number;
+              repelerAgua(): void;
+            }
+*/
+

@@ -1,0 +1,7 @@
+15ª Sesión:
+* Almacenamiento y persistencia de datos en el navegador
+  * ¿Qué es la persistencia y para qué nos sirve?
+  * Cookies
+  * SessionStorage
+  * LocalStorage
+  * Mostrando el contenido almacenado desde el navegador

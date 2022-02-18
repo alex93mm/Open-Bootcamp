@@ -1,0 +1,24 @@
+* Trabajando con Sets
+  * Diferencias entre Sets y listas
+  * Creación de Sets
+  * Restricciones a la hora de añadir elementos a un set
+  * Iteración sobre sets
+  * Obtención de valores de un set
+
+* Trabajando con Objetos
+  * Accediendo a los valores de las propiedades
+  * Uso del factor de propagación para replicar el contenido de un objeto
+  * Ordenación de listas de objetos a partir de una propiedad
+
+* Trabajando con Fechas
+  * Formateo de fechas
+  * Comparación de fechas
+  * Obtener el día, mes y año de una fecha
+
+* Trabajando con la consola
+  * Obteniendo respuestas del usuario desde la consola
+  * Usando los valores enviados
+  
+* Trabajando con valores nulos o undefined
+  * Sintaxis que indica que un valor puede ser nulo
+  * Sintaxis que indica que un valor puede ser opcional

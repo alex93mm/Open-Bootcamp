@@ -1,0 +1,45 @@
+10ª Sesión:
+
+* Trabajando con módulos
+  * ¿Qué es un módulo?
+  * Haciendo uso de require para importar
+  * Usando import y export como solución actual
+  * Diferencia de importación entre export y export default
+
+* Trabajando con librerías
+  * ¿Qué es una librería?
+
+    En informática, una biblioteca , es un conjunto de implementaciones funcionales, codificadas en un lenguaje de programación, que ofrece una interfaz bien definida para la funcionalidad que se invoca.
+
+    Las librerías son fundamentales nos permiten aprovechar el código de otros desarrolladores
+    En nodeJS a las librerías se les llama "paquetes"
+    El gestor de paquetes es npm
+
+  * Instalando librerías externas a través de npm
+  * Haciendo uso de librerías presentes entre node_modules
+
+Las librerías o paquetes las instalamos con
+
+npm install <nombre del paquete> (local para un proyecto)
+npm install -g <nombre del paquete> (global, accesible por todos los proyectos)
+npm install express
+
+El archivo package.json se actualiza con las dependencias
+Creamos el paquete con npm init
+
+Cuando queremos instalar una dependencia necesaria en ejecucion
+npm install --save express
+
+Si fuese una dependencia de desarrollo sería
+npm install --save-dev <nombre del paquete>
+
+https://www.npmjs.com/package/express
+
+Vamos a ver y a instalar express, que es la librería que nos permite hacer aplicaciones webs
+Creamos app.js
+>> seguimos en app.js
+
+//ojo para matar un puerto npx kill-port 3000
+
+  * Librerías externas de interés
+  https://profile.es/blog/librerias-javascript/

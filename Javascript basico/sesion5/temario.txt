@@ -1,0 +1,13 @@
+5ª Sesión:
+* Trabajando con números
+  * Números enteros y números decimales
+  * ¿Cómo funciona la precisión en JS?
+  * Principales operaciones aritméticas
+  * Representación de números como cadenas de texto
+  * Redondeo de números decimales con .toFixed() y .toPrecision()
+  * Uso de .valueOf() para obtener valores numéricos a partir de literales
+  * NaN
+  * Infinity
+  * Número hexadecimales
+  * Convirtiendo variables en números con Number(), .parseInt() y .parseFloat()
+  * Obtener el valor mínimo y el valor máximo que existe en JavaScript

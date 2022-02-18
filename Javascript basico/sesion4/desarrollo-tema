@@ -1,0 +1,223 @@
+
+// ============strings o cadenas de texto
+// son variables que tienen información de texto, desde un caracter a muchos
+// a diferencia de otros lenguajes de programación, no existe char
+// ########### Comillas
+/*
+const texto1 = "hola hola mundo!";
+const texto2 = 'hola mundo!';
+const texto3 = `hola mundo!`;
+texto1
+*/
+// Podemos usar comillas simples, dobles o invertidas
+// lo mejor es no mezclarlos elegir una notación y utilizarla, normalmente en las empresas hay guías de estilos
+
+// Podemos declarar una variable de texto de forma literal o creando un nuevo objeto
+
+/*
+const texto = "¡Hola a todos!";
+const texto1 = new String("¡Hola a todos!");
+typeof texto
+typeof texto1
+*/
+
+//automáticamente, tenemos acceso a todas las propiedades del objeto predefinido string, como por ejemplo la longitud de la cadena
+// ###################### length
+/*
+const texto = "¡Hola a todos!";
+texto.length
+"Hola mundo".length;
+*/
+
+// ###################### métodos
+
+/*
+  let miTexto = "Cocodrilo"
+  miTexto.charAt(0)
+  miTexto.charAt(10)
+  miTexto[0]
+  miTexto[10]
+  
+  let p =  miTexto.charAt(10)
+  typeof p
+  let q = miTexto[10]
+  typeof q
+  */
+
+/*
+"Cocodrilo".charAt(0); 
+"Cocodrilo".charAt(1); 
+"Cocodrilo".charAt(10); 
+"Cocodrilo"[0]; 
+"Cocodrilo"[1]; 
+"Cocodrilo"[100]; // undefined
+*/
+
+// ###################### concat
+
+  /*
+  let a = 5
+  let b = 4
+  let c = a + b
+  c
+  typeof c
+  
+  let animal = "Cocodrilo"
+  animal.concat(" muy peligroso", " en serio", 2)
+  */
+
+// permite concatenar (unir) los textos pasados por parámetros al de la propia variable. 
+
+/*
+"Cocodrilo".concat(" muy ", " peligroso ");
+"Cocodrilo" + " muy " + "peligroso"; 
+"Cocodrilo" + 4 + 5; 
+10 + 5 + 4 + 5;
+*/
+
+// ###################### indexOf(str, from)
+// buscará el subtexto str en nuestra variable y nos devolverá un número con la posición de la primera aparición de dicho subtexto. En caso de no encontrarlo, devolverá -1. El parámetro from es opcional, y es la posición en la que empezará a buscar, que por defecto (si no se suministra) es 0.
+  /*
+  let lorem = "Lorem ipsum quia dolor sit amet"
+  lorem.length
+  lorem.indexOf("q")
+  lorem.indexOf("m")
+  lorem.indexOf("m",5)
+  lorem.lastIndexOf("m")
+  */
+/*
+"Lorem ipsum quia dolor sit ame".indexOf("q"); 
+"Lorem ipsum quia dolor sit amet".indexOf("m", 3); 
+"Lorem ipsum quia dolor sit amet".indexOf("m", 17); 
+"Lorem ipsum quia dolor sit amet".lastIndexOf("m"); 
+*/
+
+// ================== búsquedas
+ 
+//.startsWith(s, from) 	Comprueba si el texto comienza por s desde la posición from.
+  /*
+  let animal = "Cocodrilo"
+  animal.startsWith("C")
+  animal.startsWith("c")
+  animal.startsWith("d",4)
+
+  animal.endsWith("o")
+  animal.endsWith("i",7); 
+*/
+/*
+"Cocodrilo".startsWith("C");
+"Cocodrilo".startsWith("c");
+"Cocodrilo".startsWith("c", 2);
+*/
+//.endsWith(s, to) 	Comprueba si el texto hasta la posición to, termina por s.
+
+/*
+"Cocodrilo".endsWith("o"); 
+"Cocodrilo".endsWith("l");
+"Cocodrilo".endsWith("l",8); 
+*/
+
+//.includes(s, from) 	Comprueba si el texto contiene el subtexto s desde la posición from.
+
+/*
+let a =  "Cocodrilo,Pato,Salmón"
+a.includes("Pato",30)
+*/
+
+/* 
+"Cocodrilo".includes("dri"); 
+"Cocodrilo".includes("oco", 2); 
+*/
+
+// search(regex)	Busca si hay un patrón que encaje con regex y devuelve la posición
+
+  /*
+  let a =  "Cocodrilo,Pato,Salmón,Patooooooo, "
+  a.search("Pato")
+  a.search("o") 
+  a.match(/Pato/g).length
+  */
+  /*
+  "Cocodrilo".search("o");
+  */
+  // La expresión regular /o/g busca globalmente las "o" en el texto, Las expresiones regulares permiten realizar cosas mucho más avanzadas
+  /*
+  "Cocodrilo".match(/o/g); 
+  */
+  // La diferencia de cada una es que, mientras el método search() devuelve la posición, matches() devuelve un  con las coincidencias.
+
+// ================ transformaciones
+    
+
+    /*
+      "Cu".repeat(15)
+      "COcodrilo".toLowerCase().startsWith("c");
+      "cocoDrilo".toUpperCase()
+      "    Hola ".trim();
+
+      "Eres Grande Grande   ".toLowerCase().replace(/grande/g, "pequeño").trim();
+      */
+
+/*
+      "Cu".repeat(5); 
+      "COcodrilo".toLowerCase(); 
+      "cocoDrilo".toUpperCase(); 
+      "    Hola  ".trim(); // 'Hola'
+      "Eres grande".replace("grande", "pequeño"); 
+      "Todos".replace("o", "a"); 
+      "cocodrilo".replace(/o/g, "u");
+      */
+
+//Desde ES6 {.es2021} es posible utilizar replaceAll() para reemplazar todas las ocurrencias de un texto o de una expresión regular. Funciona exactamente igual que replace(), sólo que reemplaza todas las ocurrencias en vez de solamente la primera.
+  
+   //"Eres Grande Grande   ".toLowerCase().replaceAll("grande", "pequeño").trim();
+
+/*
+"Cocodrilo".replace("o", "u");
+"Cocodrilo".replaceAll("o", "u");
+*/
+
+// ############################ Extracción de textos
+
+    /*
+    let a =  "Cocodrilo"
+    let l =  a.length 
+    l
+    a.substr(0, l-3) 
+    a.substr(0, 6) 
+    */
+  
+// ################Crear Arrays a partir de textos
+/*
+    let c = " tag1, tag2, tag3"
+    let array = c.split(",")
+    array
+    array.length
+    array[1]
+    "tag2" == array[1].trim()
+    "1.2.3.4.5".split(".")
+    "1.2.3.4.5".split("."); // ['1', '2', '3', '4', '5'] (5 elementos)
+    "Hola a todos y todas".split(" "); // ['Hola', 'a', 'todos'] (3 elementos)
+    "Cocodrilo".split(""); // ['C', 'ó', 'd', 'i', 'g', 'o'] (6 elementos)
+*/
+
+// #######################  Métodos Unicode 
+//Unicode es el nombre por el que se conoce al sistema moderno de codificación de carácteres 
+//Por ejemplo, el carácter A corresponde al código Unicode U+0041. Este 0041 realmente está en hexadecimal, por lo que 0x0041 en decimal sería igual a 65. 
+
+/*
+String.fromCharCode(65)
+"A".charCodeAt(0)
+"A".charCodeAt(0).toString(16)
+String.fromCharCode(0x0041)
+*/
+
+// ############# Interpolación de variables 
+
+/*
+const p = "cocodrilo";
+const d = "peligroso";
+"El " + p + " es " + d; 
+`El ${p} es ${d}`; 
+*/
+

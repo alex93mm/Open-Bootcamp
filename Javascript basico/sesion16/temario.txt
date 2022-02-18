@@ -1,0 +1,9 @@
+16ª Sesión:
+* Aplicando Drag & Drop
+  * Etiquetas HTML para Drag & Drop
+  * Gestión de eventos
+  * Transferencia de información con DataTransfer
+  * Tipos de DataTransfer
+  * Uso de imágenes fantasma
+  * Efectos
+  * Opciones de uso

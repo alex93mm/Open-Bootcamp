@@ -1,0 +1,6 @@
+12ª Sesión:
+* Introducción a la depuración de código desde Visual Studio Code
+  * Configuración de depuración node en Visual Studio Code
+  * Entendiendo cómo poner puntos de ruptura
+  * Analizando la IU de Visual Studio+ Code para el modo Debug
+  * Ejecutando el modo debug y analizando puntos de ruptura, valores y salidas por consola

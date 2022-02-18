@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "218a88a0-a0c9-48e5-8fff-3b5cc7b4ec08",
+		"name": "OB Java Avanzado Ejercicio 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/bootcampers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bootcampers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Meter uno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nombre\": \"Nuevo\", \"value\": 3.14}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bootcampers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bootcampers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,64 @@
+/* * */
+*{
+    margin: auto;
+    padding: auto;
+}
+
+.fixed{
+    position: fixed;
+}
+
+/* Body */
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Header */
+header{
+    background-color: aquamarine;
+    background: linear-gradient(aquamarine, darkcyan);
+    width: 100%;
+    height: fit-content;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Main */
+main{
+    background-color:white;
+    position: absolute;
+    top: 105px;
+    left: 0;
+    bottom: 35px;
+    right: 0;
+    margin: auto;
+    width: auto;
+    padding: 25px;
+    text-align: center;
+}
+
+.subtitle{
+    color:lightgray;
+}
+form{
+    margin: 15px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+form *{
+    margin: 10px;
+}
+
+/* Footer */
+footer{
+    background-color:darkslategrey;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

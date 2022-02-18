@@ -1,0 +1,27 @@
+* poo Y CLASES
+
+  * ¿Cómo se declara una clase?
+  * ¿Qué es una variable de clase?
+  * ¿Qué es un método?
+  * ¿Qué es el ámbito de un método?
+  * La palabra reservada this
+  * El método constructor
+  * ¿Qué es un Objeto?
+  * Diferencia entre instanciación e inicialización
+  * Haciendo uso del operador instanceof
+  * La palabra reservada new
+  * Accediendo a variables de clase
+  * Accediendo y usando métodos de clase
+  * Definición de propiedades y métodos públicos y privados
+  * El scope en JavaScript
+  * Diferencias entre private, public y protected
+  * ¿Qué son los Getters y cómo declararlos?
+  * ¿Cómo hacer uso de un Getter?
+  * ¿Qué son los Setters y cómo declararlos?
+  * ¿Cómo hacer uso de un Setter?
+
+    * ¿Qué es la herencia?
+  * Ejemplos de herencia
+  * ¿Qué es polimorfismo?
+  * Ejemplos de polimorfismo
+* ¿Qué ocurre con las interfaces en 

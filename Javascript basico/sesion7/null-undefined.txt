@@ -1,0 +1,34 @@
+/*
+*/
+
+let nombre;
+let apellido = null;
+
+if (nombre === undefined) {
+  console.log('el nombre es undefined')
+}
+
+if (apellido === null) {
+  // Código
+}  
+
+//!nombre
+//!apellido
+
+if (!nombre) {
+  // Este código se ejecutará
+}
+
+if (!apellido) {
+  // Este código se ejecutará
+}
+
+if (typeof nombre === 'undefined') {
+  // Este código se ejecutará
+}
+
+if (typeof apellido === 'object') {
+  // Este código se ejecutará
+}
+
+

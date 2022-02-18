@@ -1,0 +1,19 @@
+* Trabajando con Listas
+  * Usando diferentes tipos de valores dentro de una lista
+  * Formas de acceder a un elemento de la lista a partir de su posición
+  * Añadir elementos a una lista con .push() y .unshift()
+  * Formas de eliminar elementos de una lista con .pop(), shift(),
+  * Formas de eliminar elementos de una lista a partir de su posición con .splice()
+  * Concatenación de dos listas con .concat()
+  * Uso del factor de propagación para concatenar dos listas
+  * Obtener una segunda lista a partir de otra con .slice()
+  * Buenas prácticas para la iteración de listas con .forEach()
+  * Uso de .find() para encontrar valores que cumplan determinadas condiciones
+  * Haciendo uso de .map(), .filter() y .reduce()
+  * Formas de ordenación ascendente / descendente de listas
+  * Comparaciones entre listas
+  * Comprobaciones para cada elemento de una lista con .every()
+  * Comprobaciones para algunos elementos de una lista con .some()
+  * ¿Cómo saber si una lista contiene un determinado elemento?
+  * Obtener una lista a partir de un objeto iterable con .from()
+  * Uso de .keys()

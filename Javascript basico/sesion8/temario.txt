@@ -1,0 +1,20 @@
+8ª Sesión:
+* Funciones
+  * ¿Cómo se declara y se usa una función?
+  * Parámetros
+  * Paso por valor
+  * Paso por referencia
+  * Parámetros indefinidos
+  * Parámetros por defecto
+  * Paso de parámetros a través del factor de propagación
+  * ¿Qué es el ámbito de una función?
+  * ¿Qué es el retorno de las funciones?
+  * ¿Cómo hacer uso del retorno de una función?
+  * Las funciones flecha y anónimas
+  * ¿Qué es la sobrecarga de funciones y para qué se puede usar?
+  * Introducción a las funciones asíncronas
+  * ¿Qué es una Promesa , cómo se crea y cómo se resuelve?
+  * ¿Cómo se debe consumir una promesa?
+  * Introducción a las funciones generadoras
+  * Sintaxis de yield y uso de generadores
+  * ¿Cómo debemos consumir valores generados?

@@ -1,0 +1,237 @@
+
+// =============== variables number, o numéricas
+// Es un tipo de dato primitivo, que alberga un valor:
+// 
+    /*
+    let n1 = 4
+    let n2 = 15.8
+    
+    typeof n1
+    
+    const n3 = new Number(4)
+    n3
+    typeof n3
+   */
+  
+    // integer - enteros
+    // float - decimales
+    
+/*
+const n1 = 4;
+const n2 = 15.8; // los decimales se ponen con punto
+const n3 = 3,5 // error
+*/
+
+// Los podemos declarar como objeto, aunque nos se suele hacer
+
+/*
+const n1 = new Number(4);
+const n2 = new Number(15.8);
+const n3 = 4;
+typeof n1
+typeof n2
+typeof n3
+*/
+
+// ################ valueOf()
+  
+  /*
+  let numero = new Number(10)
+  let valor = numero.valueOf()
+  valor
+  */
+/*
+var numObj = new Number(10);
+console.log(typeof numObj); // objeto
+
+var num = numObj.valueOf();
+console.log(num);           // 10
+console.log(typeof num);    // número
+
+// ################ NaN (Not A Number)
+// representa valores imposibles o indeterminaciones
+//0 / 0 (Indeterminaciones)
+//4 - 'a' (Valores imposibles)
+//NaN + 4 (Operaciones con NaN como operando)
+
+      */
+
+  /*
+    let a = 5
+    let b = "cosa"
+    let c =  a - b
+    let d = a + b
+    d
+    typeof d
+    c
+    typeof c
+
+    let n = 3
+    n == 3
+    
+    let n2 =  NaN
+    //n2 == NaN
+    n2.isNaN()
+    
+    let n2
+    n2 = NaN
+    typeof n2
+     */
+/*
+let num1 = 3;
+num1 == 3; 
+let num = NaN; // es un valor imposible
+NaN == NaN
+num == NaN; // false
+typeof(num)
+*/
+// ################ isNaN()
+
+/*
+let num = NaN;
+Number.isNaN(num);
+typeof num; // number
+*/
+
+// ################ isFinite Infinity (infinito)
+
+  /*
+  Number.isFinite(42); 
+  Number.isFinite(Infinity);
+  Number.isFinite(NaN)
+  */
+
+//##################### constantes
+  /*
+  Number.POSITIVE_INFINITY	
+  Number.NEGATIVE_INFINITY
+  Number.MAX_VALUE // valor más grande
+  Number.MIN_VALUE // más pequeño
+  Number.MAX_SAFE_INTEGER 
+  Number.MIN_SAFE_INTEGER
+  Number.EPSILON
+  Number.NaN
+  */
+
+// ################ isInteger
+
+// integer (entero)
+// float (decimales)
+    /*
+    let a = 10
+    let b = 3
+    a * b
+
+    a / b
+    a % b
+    */
+/*
+  Number.isInteger(4.5)
+
+  Number.parseInt("66"); 
+  Number.parseInt("66€"); 
+  Number.parseInt("33-titulo-de-blog");
+  Number.parseInt("titulo-de-blog-33");
+
+  Number.parseInt("66.565"); 
+  Number.parseFloat("66.565"); 
+  */
+
+
+/*
+Number.isInteger(5); // true
+Number.isInteger(4.6); // false, es decimal
+*/
+// ################ parseInt
+// Comprobar:
+
+/*
+Number.parseInt("66"); 
+Number.parseInt("66€"); 
+Number.parseInt("Núm. 66"); 
+Number.parseInt("66"); 
+*/
+
+// #############  parseFloat()
+
+/*
+Number.parseInt("66.565"); 
+Number.parseFloat("66.565"); 
+*/
+
+// #############  toExponential(),toFixed, toPrecision
+    
+    /*
+    (1.1).toExponential(2); 
+    (1.1).toFixed(10); // "1.50" en punto fijo
+    (1.12).toPrecision(2); // "2"
+    */
+
+// #############  .random()
+// Obtenemos un número al azar entre [0, 1) con 16 decimales
+
+      /*
+      let x = Math.random()
+      x = (x * 10) + 1
+      x = Math.floor(x)
+      */
+
+   // Math.round(3.49)
+   // Math.ceil(3.00)
+   // Math.floor(3.89)
+
+// #############  .round()
+/*
+// Redondeo natural, el más cercano
+Math.round(3.75); // 4
+Math.round(3.25); // 3
+
+// Redondeo superior (el más alto)
+Math.ceil(3.75); // 4
+Math.ceil(3.25); // 4
+
+// Redondeo inferior (el más bajo)
+Math.floor(3.75); // 3
+Math.floor(3.25); // 3
+
+*/
+    //Math.round(3.123456789);
+    //Math.fround(3.1234535345435);
+
+  /*
+// Redondeo con precisión
+Math.round(3.123456789); // 3
+//La función Math.fround() devuelve la representación flotante de precisión simple de 32 bits más cercana de un Number .
+Math.fround(3.123456789); // 3.1234567165374756
+
+// Truncado (sólo parte entera)
+
+*/
+    /*
+    Math.round(3.75) // 4
+    Math.trunc(3.75); // 3
+    Math.round(-3.75); // -4
+    Math.trunc(-3.75); // -3
+    */
+
+    // ############### convertir un número en base decimal
+
+    /*
+    let decimal = 255 // en base 10
+    decimal
+    typeof decimal
+    
+    let resultado
+    typeof resultado
+
+    //resultado = decimal.toString()
+    //resultado
+    //typeof resultado
+    
+    //en base 16 hexadecimal
+    resultado =  decimal.toString(16)
+    typeof resultado
+
+    //blanco CSS = "#ffffff" o "255 255 255"
+
+    */

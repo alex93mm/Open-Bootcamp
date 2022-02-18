@@ -1,0 +1,73 @@
+// ==============>>>>> SETS
+// Desde ES6 tenemos un nuevo tipo de estructura, los set
+// Los set son parecidos a las listas o arrays, pero tienen algunas diferencias
+// La gran diferencia son la gestión de duplicados
+// En un set no está permitido guardar valores duplicados
+// En realidad un array es una colección de índices y un Set es una colección de claves
+// Una colección de índices es una colección de datos que se encuentran ordenados por un índice. 
+// Una colección de claves, es una colección de datos que usa claves, y esas claves contienen elementos con los que podemos iterar en el orden en el que fueron insertados.
+
+  // ################ DECLARACIÓN DE UN SET
+  // inicilizamos con un set vacío
+  
+   // const miSet = new Set(); 
+  
+  // o con valores
+  
+  //const miSet = new Set([1, 2, 2, 3, 4, 4]) 
+  //miSet // vemos como no permite duplciados y sus métodos
+
+  //const mySet = new Serror ya que siempre tiene que ser un objeto iterable
+
+  // ################ AÑADIR ELEMENTOS
+  
+ 
+  //const mySet = new Set([1, 2, 3]); 
+  //mySet.add('45');
+  //mySet.add('45');
+
+  // En un Set siempre se almacenarán los nuevos valores al final del mismo.
+  // Si ya existe lo ignorará
+ // mySet;
+
+  //mySet.delete(2); //Borrar elementos.
+  //mySet
+  //mySet.values()
+  //mySet.size // tamaño del Set
+ 
+
+  // en un set no podemos acceder directamente a un elemento, es solo una colección de claves. solo podremos iterar todos sus elementos a través de un loop.
+  
+   /*
+    const mySet = new Set([1, 2, "hola"]); 
+    for ( let myValue of mySet ) { 
+        console.log('Este es el valor: ' + myValue); 
+    } 
+
+    const mySet2 = new Set([1, 2, "hola"]); 
+    mySet2.forEach( myValue => console.log('Este es el valor: ' + myValue) );
+   */
+
+  /* ES6
+ 
+  */
+  // ############### Buscar en un SET
+  // utilizaremos el método has, que nos devolverá un true o un false, en función de si existe el valor buscado o no.
+   
+    const mySet = new Set([1, 2, 3]);
+    console.log(mySet.has(1)); 
+    // true
+    console.log(mySet.has(4));
+    // false
+
+
+
+
+
+
+
+
+
+
+
+    

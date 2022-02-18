@@ -1,0 +1,240 @@
+
+// Las listas / arrays
+// ¿Qué es un array o lista
+// Es una colección o agrupación de elementos en una misma variable, cada uno de ellos ubicado por la posición que ocupa. 
+
+//  ############ Como se declara un array?
+// Podemos crear una instancia del objeto array
+
+//const array0 = new Array("a", "b", "c");
+
+// ############ Mediante literales
+
+/*
+const array = ["1", "2", "3"]; // Array con 3 elementos
+const empty = []; // Array vacío (0 elementos)
+const mixto = ["hola", 45, true]; // Array mixto
+const miArray = [];
+*/
+
+// ############ ojo
+/*
+const array = new Array(4);
+array
+const array2 = [5];
+array2
+*/
+
+// ############ length, y por valor posición
+
+/*
+const array = ["índice 0", "2", "c"];
+array.length
+array[0]; 
+array[2]; 
+*/
+
+// ############ push
+//Añade uno o varios elementos al final del array. Devuelve tamaño del array.
+/*
+const array = ["1", "2", "c"];
+array.push("nuevo", "56");
+array
+*/
+
+// ############ pop
+//Elimina y devuelve el último elemento del array.
+
+  /*
+  const array = ["1", "2", "c"];
+  array.pop();
+  */
+
+// ############ unshift
+//Añade uno o varios elementos al inicio del array. Devuelve tamaño del array.
+
+/*
+const array = ["1", "2", "c"];
+array.unshift("a");
+array
+array.unshift("a","b");
+array
+*/
+
+
+// ############ shift
+//	Elimina y devuelve el primer elemento del array.
+
+  /*
+  const array = ["1", "2", "c"];
+  array.shift()
+  array
+  */
+
+// ############ concat
+// concatena valores al final, y devuelve el array
+  /*
+  const array = ["1", "2", "c"];
+  array.concat("hola",2)
+  */
+
+  // ############ slice
+  //Devuelve los elementos desde posición ini hasta end 
+  /*
+  const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+  aves.slice(2, 4) // genera un nuevo array
+  aves // no se modifica
+  
+  const misaves = aves.slice(2, 4) // genera un nuevo array
+  misaves.length
+  misaves
+   */
+
+// ############ splice
+// Elimina y devuelve num elementos desde posición ini.
+// modifica el array
+  /*
+  const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+  aves.splice(2, 4) 
+  aves // si se modifica
+  */
+// ############ join
+
+  /*
+  const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+  aves.join(" y "); 
+*/
+
+// ############ split
+
+  /*
+  let titulo = "El Cantar de Mio Cid"
+  titulo.split(" ")
+  "a.b.c".split("."); // Devuelve ['a', 'b', 'c']
+  "Pato,Canario".split(",")
+  */
+
+// ############ From
+  //Array.from("Canario"); // [ 'C', 'a', 'n', 'a', 'r', 'i', 'o' 
+
+// ############ isArray
+
+  /*
+  const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+  let ave = 'Gorrión'
+  Array.isArray(aves)  ///// ojo con Array con mayúscula
+  Array.isArray(ave)
+  */
+
+  // ############ includes
+  //Comprueba si es uno de los elementos incluidos en el array.
+  /*
+  const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+  aves.includes(10); 
+  aves.includes("Pato"); 
+  aves.includes("Pato", "Gorrión"); 
+  aves.includes("Pato", "Pollo"); 
+*/
+
+// ############ indexOf
+//Devuelve la posición de la primera aparición desde from.
+
+  /*
+  const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito","Pato", "Pollo", "Gallina", "Canario", "Periquito","Pollo"];
+  aves.indexOf("Pollo"); 
+  aves.indexOf("Pollo",2); 
+  aves.indexOf("Pollo",12); 
+  aves.lastIndexOf("Pollo")
+  */
+
+// ############ sort
+// ordena por orden alfabético
+
+    /*
+    const aves = ["Pato", "Pollo", "Gallina", "Canario", "Periquito","Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+    aves.sort()
+    aves // ojo que lo ordena y modifica el array
+    aves.reverse() // al revés
+    */
+
+// Si queremos otros órdenes tendremos que hacer nuestra propia función de ordenación
+
+/*
+const numeros = [3, 23, 12];
+numeros.sort(function(a, b){return b - a});
+numeros.sort(function(a, b){return a - b});
+*/
+
+// ================ las Array Functions
+// son métodos que permiten hacer operaciones con todos los elementos del array
+
+// ################ for each
+
+/*
+const arr = ["a", "b", "c", "d"];
+arr.forEach(() => console.log("Es un elemento del array"));
+*/
+
+// para dotarles de utilidad les pasaremos una funciónd e callback como parámetro
+
+// los parámetros son e(elemento) i(posición) y a (array)
+
+/*
+const aves = ["Pato", "Pollo", "Gallina",   "Canario", "Periquito"];
+aves.forEach((e) => console.log(e));
+aves.forEach((e, i) => console.log(e, i))
+aves.forEach((e, i, a) => console.log(e, i, a[0]));
+*/
+
+// ##################  Función every
+// Comprobaremos que todos los elementos cumplen una condición que se especifica en el callback
+
+//const arr = ["a", "b", "c", "d"];
+//arr.every((e) => e.length == 1); // nos dirá que es true
+
+// ##################  Función some
+// Igual pero es si "al menos" uno de los elementos cumple la condición
+
+//const arr = ["a", "bb", "c", "d"];
+//arr.some((e) => e.length == 2); // true
+
+// ################ map (transformaciones)
+// tendremos un nuevo array con los cambios que le pasemos
+
+/*
+const arr = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+const nuevoArr = arr.map((e) => e.length);
+nuevoArr; // devuelve [ 4, 5, 7, 7, 9 ]
+*/
+
+// ############### filter o filtrado
+// filtraremos un array y tendremos uno nuevo con los que nos interesen
+
+/*
+const arr = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+const nuevoArr = arr.filter((e) => e[0] == "P");
+nuevoArr // [ 'Pato', 'Pollo', 'Periquito' ]
+*/
+
+// ############## find (Búsqueda) 
+// Nuevos en ES6, buscamos elementos en un array
+// Nos devuelve el primer elemento que encuentra
+
+/*
+const arr = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+arr.find((e) => e.length == 7); 
+arr.findIndex((e) => e.length == 7); 
+*/
+
+// ======================= iteradores
+// en ES6 hay unos nuevos métodos muy útiles para recorrer todos los elementos de un array
+
+// ####################### Keys
+// Obtiene un array con las keys (posiciones)
+/*
+const arr = ["Pato", "Pollo", "Gallina", "Canario", "Periquito"];
+const keys = [...arr.keys()]; // [ 0, 1, 2, 3, 4 ]
+keys
+*/
+// lo veremos en próximas sesiones
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Simulador de hipoteca</title>
+</head>
+<body>
+    <!-- Header fijado con logo y menu invisible ya que no existe la posibilidad de navegacion-->
+    <header class="fixed">
+        <div class="logo">
+            <img src="assets/img/logo.png">
+        </div>
+        <nav class="menu"></nav>
+    </header>
+    <!-- Contenedor principal -->
+    <main class="main">
+        <h2 class="subtitle">Calcula tu hipoteca</h2>
+        <form id="hipoteca" onKeyPress="if(event.keyCode == 13) event.returnValue = false;">
+            <input id="cantidadHipoteca" type="number" placeholder="Cantidad &euro;" required>
+            <select form="hipoteca" id="mesesHipoteca" required>
+                <option value="120">120 Meses</option>
+                <option value="240">240 Meses</option>
+                <option value="360">360 Meses</option>
+            </select>
+            <select form="hipoteca" id="interesHipoteca" required>
+                <option value="1.21">Variable</option>
+                <option value="1.45">Fijo</option>
+            </select><br>
+            <input type="button" onclick="calcularHipoteca()" value="Calcular">
+        </form>
+        <div id="resultado">CUOTA MENSUAL: 0</div>
+    </main>
+    <!-- Footer fijado con nombre de autor y derechos -->
+    <footer class="fixed">
+        <div class="author">Alejandro Martinez Martinez</div>
+        <div class="rigths">Todos los derechos reservados &#169;</div>
+    </footer>
+    <!-- Script calculo hipoteca -->
+    <script src="js/calculoHipoteca.js"></script>
+    <!-- Deshabilitar click derecho -->
+    <script type='text/javascript'>
+        document.oncontextmenu = function(){return false}
+    </script>
+</body>
+</html>

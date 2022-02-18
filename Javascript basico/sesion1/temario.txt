@@ -1,0 +1,32 @@
+
+* Introducción a JavaScript
+  * ¿Qué es un lenguaje interpretado?
+  * ¿Qué es un intérprete?
+  * Diferencias entre un lenguaje interpretado y lenguaje compilado
+  * ¿Qué es JavaScript?
+  * ¿Qué es ECMAScript y qué aporta?
+  * Versiones actuales de ECMAScript más empleadas a día de hoy y su compatibilidad
+  * Plugins recomendados para el desarrollo de JS en Visual Studio Code
+
+
+* Introducción a NodeJS y NPM
+  * ¿Qué es NodeJS?
+  * ¿Qué es NPM y qué competencia tiene?
+  * Instalación de NodeJS y NPM
+
+* Creación de un proyecto Node
+  * Inicio del proyecto con npm init
+  * Respondiendo a las preguntas por consola para crear el archivo package.json
+  * Analizando el archivo package.json
+    * Nombre del proyecto
+    * Versión del proyecto
+    * Scripts
+  * La extensión de los archivos JavaScript
+  * Creación de tu primer archivo JS: hola_mundo.js
+  * Usando console.log para mostrar "Hola, Mundo!"
+  
+* Ejecución de un proyecto Node
+  * Ejecución del archivo con node a través de la terminal
+  * Creación de un script en package.json para automatizar la ejecución
+  * Ejecutando el script npm a través de la terminal
+  * ¿Cómo añadir comentarios en un archivo JS?

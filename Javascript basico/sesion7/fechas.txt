@@ -1,0 +1,104 @@
+  // ########## Trabajamos con fechas
+  
+  // Obtenemos la fecha actual y la guardamos en la variable f
+      
+      /*
+      const f = new Date();
+      f
+    
+      const f2 = new Date("2018/01/30 23:30:14");
+      f2
+      // desde un tiempo UNIX o TimeStamp
+      const f3 = new Date(872817240000);
+      f3
+      */
+      
+      /*
+        El tiempo UNIX (o UNIX timestamp) es formato numérico utilizado para calcular una fecha en UNIX. NO es legible pero si muy eficiente en terminos informáticos, son los segundo transcurridos desde el 1/1/1970 
+        las diferencias o comparaciones de fecha son muy sencillas ya que comparamos un número.
+        */
+      
+      /*
+      let y = 2021
+      let m = 10
+      let d = 3
+      //const f4 = new Date(y, m, d, h, min, s, ms);
+      const f4 = new Date(y, m, d + 1);
+      f4
+      f4
+      */
+    
+      //const f5 = Date.now(); // 1635344804597
+      //f5 // en UNIX
+      // idem a
+      //const f = +new Date();
+      //const f1 = new Date().getTime();
+
+      // #################### GETTERS
+ 
+      const miF = new Date(Date.now());
+      miF
+      miF.getDay(); 
+      miF.getDate(); 
+      miF.getFullYear(); 
+      miF.getHours(); 
+      miF.getMinutes(); 
+      miF.getSeconds(); 
+      miF.getMilliseconds(); 
+      miF.getTimezoneOffset(); 
+      miF.getTime(); 
+
+      const MESES = [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+      ];
+
+    miF.getMonth()
+    MESES[ miF.getMonth()]
+
+  // ############################ SETTERS
+  /*
+          f.setDate(15); 
+          f.setMonth(1); 
+          f.setFullYear(2021); 
+          f.setHours(21); 
+          f.setMinutes(00); 
+          f.setSeconds(3); 
+          f.setMilliseconds(79); 
+          f.setTime(872817240000); 
+  */ 
+
+  // ############################ SETTERS
+  // Formato por defecto	Fri Aug 24 2018 00:23:31 GMT+0100
+
+  //Devuelve formato sólo de fecha: Fri Aug 24 2018
+  miF.toDateString()	
+
+  //Idem al anterior, pero en el formato regional actual:
+ miF.toLocaleDateString()	 
+
+  //Devuelve formato sólo de hora: 00:23:24 GMT+0100 ...
+ miF.toTimeString()	
+
+  //Idem al anterior, pero en el formato regional actual: 0:26:37
+ miF.toLocaleTimeString()	
+
+  //Devuelve la fecha en el formato ISO 8601: 2018-08-23T23:27:29.380Z
+ miF.toISOString()	
+
+  //Idem al anterior, pero asegurándose que será compatible con JSON.
+ miF.toJSON()	
+
+  //Devuelve la fecha, utilizando UTC (ver más adelante).
+ miF.toUTCString()	
+ 

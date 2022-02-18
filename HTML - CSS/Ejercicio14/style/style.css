@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+*, *::after, *::before {
+  padding: 0;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.morphing-container {
+  background-color: black;
+  position: relative;
+  min-height: 100vh;
+  font-size: 40px;
+  color: #00FFFF;
+  -webkit-filter: contrast(2) blur(1px);
+          filter: contrast(2) blur(1px);
+}
+
+.word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: word 15s infinite ease-in-out;
+          animation: word 15s infinite ease-in-out;
+}
+
+.word:nth-child(1) {
+  -webkit-animation-delay: -15s;
+          animation-delay: -15s;
+}
+
+.word:nth-child(2) {
+  -webkit-animation-delay: -13.125s;
+          animation-delay: -13.125s;
+}
+
+.word:nth-child(3) {
+  -webkit-animation-delay: -11.25s;
+          animation-delay: -11.25s;
+}
+
+.word:nth-child(4) {
+  -webkit-animation-delay: -9.375s;
+          animation-delay: -9.375s;
+}
+
+.word:nth-child(5) {
+  -webkit-animation-delay: -7.5s;
+          animation-delay: -7.5s;
+}
+
+.word:nth-child(6) {
+  -webkit-animation-delay: -5.625s;
+          animation-delay: -5.625s;
+}
+
+.word:nth-child(7) {
+  -webkit-animation-delay: -3.75s;
+          animation-delay: -3.75s;
+}
+
+@-webkit-keyframes word {
+  0%, 5%, 100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+  20%, 80% {
+    -webkit-filter: blur(1em);
+            filter: blur(1em);
+    opacity: 0;
+  }
+}
+
+@keyframes word {
+  0%, 5%, 100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+  20%, 80% {
+    -webkit-filter: blur(1em);
+            filter: blur(1em);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
