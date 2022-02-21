@@ -1,0 +1,114 @@
+// Import Colors variables
+@import 'Variables.scss';
+
+// -------- GENERAL ---------
+
+body{
+    font-family: $font-raleway;
+}
+
+#root, html, body, .row{
+    height: 100%;
+}
+
+Form {
+    accent-color: $ob-green-color;
+}
+
+.font-weigth-500{
+    font-weight: 500;
+}
+
+// -------- LOGIN PAGE ---------
+
+h2.login-title{
+    font-size: 24px;
+    margin-bottom: 6vh;
+}
+
+.login-page{
+    background: url(../resources/img/bg-ob-alumnos.png);
+    background-color: $ob-green-color;
+    font-size: 14px;
+}
+
+.login-form-container{
+    padding-right: 10vh !important;
+    padding-left: 10vh !important;
+}
+
+.login-form{
+    padding-top: 20vh !important;
+    padding-bottom: 15vh !important;
+}
+
+.text-salient{
+    color: $ob-green-color;
+    font-weight: bold;
+}
+
+label.field {
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+.field-text{
+    background-color: $bg-soft-grey;
+    color: $text-light-grey;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 3vh;
+    border-radius: 7.5px;
+}
+
+.btn-login{
+    background-color: $ob-green-color;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 7.5px;
+}
+
+.btn-login:hover{
+    color: #FFF;
+    background-color: $text-light-grey;
+}
+
+.footer-rights{
+    color: $text-light-grey;
+}
+
+.error-message{
+    color: tomato;
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+// --------- MEDIA QUERIES -----------
+
+// --------- Login page ------------
+
+@media (max-width: 1024px) {
+    .empty-col{
+        visibility: hidden !important;
+    }
+
+    .login-form-container{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-height: 1080px) {
+    .empty-col{
+        visibility: hidden !important;
+    }
+
+    .login-form-container{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        border-radius: 25px;
+    }
+}
+
