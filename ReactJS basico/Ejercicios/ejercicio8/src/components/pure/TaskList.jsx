@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Task from './Task'
-import Filteroptions from './filter/FilterOptions'
 
 function TaskList({ tasks, onToogleClick, onRemoveClick }) {
     return (
