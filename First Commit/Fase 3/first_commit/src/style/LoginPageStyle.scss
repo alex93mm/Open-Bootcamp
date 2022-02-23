@@ -1,24 +1,6 @@
 // Import Colors variables
 @import 'Variables.scss';
 
-// -------- GENERAL ---------
-
-body{
-    font-family: $font-raleway;
-}
-
-#root, html, body, .row{
-    height: 100%;
-}
-
-Form {
-    accent-color: $ob-green-color;
-}
-
-.font-weigth-500{
-    font-weight: 500;
-}
-
 // -------- LOGIN PAGE ---------
 
 h2.login-title{
@@ -40,6 +22,10 @@ h2.login-title{
 .login-form{
     padding-top: 20vh !important;
     padding-bottom: 15vh !important;
+}
+
+Form {
+    accent-color: $ob-green-color;
 }
 
 .text-salient{

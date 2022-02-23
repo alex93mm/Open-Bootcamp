@@ -1,10 +1,12 @@
-import Loginpage from './pages/LoginPage';
+import CandidatesPage from './pages/CandidatesPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <div className='h-100'>
     {/* TODO: Wouter y router pages */}
-      <Loginpage></Loginpage>
+      {/* <LoginPage></LoginPage> */}
+      <CandidatesPage></CandidatesPage>
     </div>
   );
 }

@@ -1,13 +1,17 @@
 import React from 'react';
 import LoginForm from '../components/pure/forms/LoginForm';
 
-const Loginpage = () => {
+
+// ? Pagina principal para inicio de sesion
+
+const LoginPage = () => {
     return (
         <div className='container-fluid h-100 login-page'>
-            <div className='row'>                
+            <div className='row h-100'>                
                 <div className='col-5 align-items-center bg-white login-form-container'>
                     <div className='login-form'>
                         <h2 className='login-title'>OpenBootcamp <span className='text-salient'>| Alumnos</span></h2>
+                        {/* Adjuntamos formulario de inicio de sesion */}
                         <LoginForm></LoginForm>
                     </div>
                     <footer className='footer-rights'>
@@ -24,4 +28,4 @@ const Loginpage = () => {
     );
 }
 
-export default Loginpage;
+export default LoginPage;

@@ -10,3 +10,27 @@ $text-dark-grey: #121625;
 $text-light-grey: #A5A8B3;
 $text-soft-grey: #8C909C;
 $bg-soft-grey: #F8F8F9;
+$bg-medium-grey: #E6E6EA;
+
+
+// --------- GENERAL STYLES ----------
+
+body{
+    font-family: $font-raleway;
+}
+
+#root, html, body{
+    height: 100%;
+}
+
+.font-weigth-500{
+    font-weight: 500;
+}
+
+.text-green{
+    color: $ob-green-color;
+}
+
+.pointer{
+    cursor: pointer;
+}

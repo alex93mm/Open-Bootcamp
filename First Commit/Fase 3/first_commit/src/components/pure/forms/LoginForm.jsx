@@ -2,6 +2,8 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+// ? Estructura de los datos y control de formato de los campos de inicio de sesion
+
 const loginSchema = Yup.object().shape(
     {
         email: Yup.string()
@@ -12,14 +14,22 @@ const loginSchema = Yup.object().shape(
     }
 )
 
+// ? Valores por defecto
+
 const initialValues = {
     email: '',
     password: '',
     remember: false
 }
 
+// ? Formulario de inicio de sesion, trabajado con Formik y Yup
+
 export default function LoginForm() {
 
+    /**
+     *  Funcion para obtener token de acceso y almacearlo en la sessionData
+     * @returns String tokenAcceso 
+     */
     const loginMethod = () => {
         // Metodo de login
     }

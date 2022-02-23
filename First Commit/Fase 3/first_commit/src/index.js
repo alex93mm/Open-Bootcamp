@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Import own Styles
-import './style/PagesStyle.scss';
+import './style/LoginPageStyle.scss';
+import './style/CandidatesPageStyle.scss';
 
 ReactDOM.render(
   <React.StrictMode>

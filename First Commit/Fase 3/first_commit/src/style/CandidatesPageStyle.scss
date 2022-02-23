@@ -1,0 +1,181 @@
+// Import Colors variables
+@import 'Variables.scss';
+
+// -------- GENERAL ---------
+
+body{
+    font-family: $font-raleway;
+}
+
+#root, html, body{
+    height: 100%;
+}
+
+Form {
+    accent-color: $ob-green-color;
+}
+
+.font-weigth-500{
+    font-weight: 500;
+}
+
+// -------- CANDIDATES PAGE ---------
+
+// ----------- HEADER ---------------
+.header-user-container{
+    padding: 0;
+    margin: 0;
+    line-height: 40px;
+    height: 10%;
+    border-radius: 50px;
+    max-width: 160px;
+}
+
+
+.header-user-name{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.header-user-arrow{
+    font-size: 10px;
+    color: $text-light-grey;
+}
+
+.header-user-img{
+    color: $text-light-grey;
+    background-color: #000;
+    border-radius: 50%;
+    width: 40px;
+}
+
+// -------- CANDIDATES TABLE ----------
+
+h3.candidates-page-title{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.input-search-candidates-icon {
+    position: absolute;
+    padding-left: 1.75vh;
+    padding-top: 3vh;
+    color: $text-soft-grey;
+}
+
+.input-search-candidates {
+    padding-left: 5vh;
+    background-color: $bg-medium-grey;
+    color: $text-soft-grey;
+}
+
+.btn-add-candidate {
+    font-weight: bold;
+    background-color: #FFF;
+    color: $text-dark-grey;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid $bg-medium-grey;
+}
+
+.btn-add-candidate .btn-text{
+    margin-left: 1vh;
+}
+
+.candidates-table{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 15px;
+    box-shadow: 1px -1px 0 $bg-medium-grey;
+}
+
+.candidates-table thead {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: -1px -1px 0 $bg-medium-grey;
+}
+
+.candidates-table thead th{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 11px;
+    color: $text-light-grey;
+    padding: 1.25vh 2.5vh;
+}
+
+.candidates-table thead th i{
+    padding-left: 1vh;
+}
+
+.candidates-table tbody{
+    border-top: 1px solid grey !important;
+    border: 1px solid $bg-medium-grey;
+}
+
+.candidates-table tbody th{
+    padding: 2vh 2.5vh;
+    font-weight: 600;
+}
+.candidates-table tbody td{
+    padding: 2vh 2.5vh;
+    font-weight: 500;
+}
+
+.candidates-table-tags{
+    font-size: 12px;
+    font-weight: 700;
+    color: #FFF;
+    background-color: $ob-green-color;
+    padding: 0.5vh 0.75vh;
+    margin: 0.25vh;
+    border-radius: 5px;
+    
+}
+
+// --------- CANDIDATES FILTER ----------
+.candidates-filter-container{
+    border-radius: 15px;
+    margin-top: 3vh;
+    border: 1px solid $bg-medium-grey;
+}
+
+.candidates-filter-selected-tags{
+    margin-top: -1vh;
+}
+
+.candidates-filter-tag-span{
+    padding: 0.25vh 1vh;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 15px;
+    color: $text-dark-grey;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: $bg-medium-grey;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.candidates-filter-container .form-check-label{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 0.75vh;
+}
+
+.candidates-filter-container input[type='radio']{
+    border-radius: 5px;
+}
+
+.candidates-filter-container input[type='radio']:checked{
+    background-color: $ob-green-color;
+    border-color: $text-light-grey;
+}
+
+.candidates-filter-container input[type='checkbox']:checked{
+    background-color: $ob-green-color;
+    border-color: $text-light-grey;
+}
+
+// --------- MEDIA QUERIES -----------
+
+// --------- Candidates page ------------
