@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6cb9c74b-6e9d-4c0f-8291-9b1a45ece95d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 2" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/components/containers/CandidatesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/components/containers/CandidatesContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/components/pure/CandidatesFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/components/pure/CandidatesFilter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/components/pure/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/components/pure/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/pages/CandidatesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/pages/CandidatesPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/style/CandidatesPageStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/style/CandidatesPageStyle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/style/Variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../First Commit/Fase 3/first_commit/src/style/Variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Javascript basico/Ejercicios/Ej8/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Javascript basico/Ejercicios/Ej8/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReactJS basico/Ejemplos/hola-mundo" beforeDir="false" afterPath="$PROJECT_DIR$/../../ReactJS basico/Ejemplos/hola-mundo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ReactJS basico/Ejemplos/task_list" beforeDir="false" afterPath="$PROJECT_DIR$/../../ReactJS basico/Ejemplos/task_list" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="25k07kftKmO8R0WLRZCv0Ezb4tU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6cb9c74b-6e9d-4c0f-8291-9b1a45ece95d" name="Changes" comment="" />
+      <created>1646055614251</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646055614251</updated>
+    </task>
+    <servers />
+  </component>
+</project>
