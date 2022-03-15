@@ -1,28 +1,32 @@
 import { useState } from "react";
-import Footer from "../components/pure/Footer";
+import Footer from "../components/containers/Footer";
 import LoginForm from "../components/pure/forms/LoginForm";
 import RegisterForm from "../components/pure/forms/RegisterForm";
+import HomeBackground from "../components/pure/BackgroundHome";
 import Logo from "../components/pure/Logo";
 import SloganSection from "../components/pure/SloganSection";
 
 export default function LoginPage() {
 
-  const [loginForm, setLoginForm] = useState(true)
+  const [loginForm, showLoginForm] = useState(true)
+
+  const setForm = () => {
+    return loginForm 
+    ? (<LoginForm changeForm={ () => {showLoginForm(!loginForm)} }/>)
+    : (<RegisterForm changeForm={ () => {showLoginForm(!loginForm)} }/>)
+  }
 
   return (
-    <div className='grid min-h-screen bg-darkBlue xl:grid-cols-[0.4fr_1fr]'>
+    <div className='grid min-h-screen bg-darkBlue 
+        xl:grid-cols-[0.4fr_1fr]'>
         <div className="pt-24 mx-auto w-80">
           <Logo/>
-          { loginForm 
-          ?
-          (<LoginForm changeForm={ () => {setLoginForm(!loginForm)} }/>)
-          :
-          <RegisterForm changeForm={ () => {setLoginForm(!loginForm)} }/>}
+          { setForm() }
           <Footer/>
         </div>
         <div className="hidden xl:block">
-          <div className="min-h-full bg-cover opacity-30 bg-sloganSection"></div>
-            <SloganSection/>
+          <HomeBackground/>
+          <SloganSection/>
         </div>
     </div>
   )

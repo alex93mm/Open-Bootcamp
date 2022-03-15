@@ -11,6 +11,7 @@ module.exports = {
       },
       lineHeight: {
         '15': "3.5rem", 
+        big: "6.5em",
       },
       letterSpacing: {
         ".25": ".25em"
@@ -20,7 +21,7 @@ module.exports = {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-      }
+      },
     },
   },
   plugins: [],

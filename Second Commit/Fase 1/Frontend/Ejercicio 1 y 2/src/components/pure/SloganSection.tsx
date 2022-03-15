@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function SloganSection() {
   return (
     <div className="fixed top-32 left-1/3">
