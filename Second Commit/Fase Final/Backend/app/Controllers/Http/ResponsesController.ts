@@ -1,6 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Response from 'App/Models/Response'
 import ResponseValidator from 'App/Validators/CreateResponseValidator'
+import UpdateResponseValidator from 'App/Validators/UpdateResponseValidator'
 
 export default class ResponsesController {
   public async index({ params, response }: HttpContextContract) {
@@ -40,5 +41,18 @@ export default class ResponsesController {
       .firstOrFail()
 
     return response.ok({ data: responseForum })
+  }
+
+  public async update({ request, auth, params, response }: HttpContextContract) {
+    const discuss = await Response.query()
+      .where('id', params.id)
+      // .apply((scope) => scope.visibleTo(auth.user))
+      .firstOrFail()
+
+    const validatedData = await request.validate(UpdateResponseValidator)
+
+    discuss.merge(validatedData)
+
+    return response.ok({ data: discuss })
   }
 }
