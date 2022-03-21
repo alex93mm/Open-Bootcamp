@@ -1,12 +1,12 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Course from 'App/Models/Course'
-import CourseValidator from 'App/Validators/CourseValidator'
+import CourseValidator from 'App/Validators/CreateCourseValidator'
 
 export default class CoursesController {
-  public async index() {
+  public async index({ response }: HttpContextContract) {
     const courses = await Course.query().preload('themes')
 
-    return courses
+    return response.ok({ data: courses })
   }
 
   public async store({ request, auth, response }: HttpContextContract) {
@@ -14,13 +14,13 @@ export default class CoursesController {
 
     const course = await Course.create(validatedData)
 
-    return course
+    return response.created({ data: course })
 
     // await course.preload('themes')
   }
 
-  public async show({ params }: HttpContextContract) {
+  public async show({ params, response }: HttpContextContract) {
     const course = await Course.query().where('id', params.id).preload('themes').firstOrFail()
-    return course
+    return response.ok({ data: course })
   }
 }

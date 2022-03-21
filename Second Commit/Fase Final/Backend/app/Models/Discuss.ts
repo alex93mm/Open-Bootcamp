@@ -1,8 +1,17 @@
 import { DateTime } from 'luxon'
-import { BaseModel, belongsTo, BelongsTo, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
+import {
+  BaseModel,
+  belongsTo,
+  BelongsTo,
+  column,
+  HasMany,
+  hasMany,
+  scope,
+} from '@ioc:Adonis/Lucid/Orm'
 import Theme from './Theme'
 import User from './User'
 import Response from './Response'
+import VoteDiscuss from './VoteDiscuss'
 
 export default class Discuss extends BaseModel {
   @column({ isPrimary: true })
@@ -37,4 +46,14 @@ export default class Discuss extends BaseModel {
 
   @hasMany(() => Response)
   public responses: HasMany<typeof Response>
+
+  @hasMany(() => VoteDiscuss)
+  public votediscusses: HasMany<typeof VoteDiscuss>
+
+  public static visibleTo = scope((query, user: User) => {
+    if (user.role === 'admin') {
+      return
+    }
+    query.where('userId', user.id)
+  })
 }

@@ -26,7 +26,7 @@ export default class AuthController {
       if (passwordVerified) {
         const token = await auth.login(user)
 
-        return token
+        return response.ok({ data: token })
       }
       return response.badRequest(-2)
     }
