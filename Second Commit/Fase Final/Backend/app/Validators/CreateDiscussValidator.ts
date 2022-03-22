@@ -7,7 +7,7 @@ export default class DiscussValidator {
   public schema = schema.create({
     title: schema.string(),
     content: schema.string(),
-    userId: schema.number([rules.exists({ table: 'users', column: 'id' })]),
+    userId: schema.number.optional([rules.exists({ table: 'users', column: 'id' })]),
     themeId: schema.number([rules.exists({ table: 'themes', column: 'id' })]),
     pinned: schema.boolean(),
   })

@@ -21,7 +21,10 @@ export default class ResponsesController {
   public async store({ request, auth, response }: HttpContextContract) {
     const validatedData = await request.validate(ResponseValidator)
 
-    const responseForum = await auth.user?.related('responses').create(validatedData)
+    const responseForum =
+      auth.user?.role === 'admin'
+        ? await Response.create(validatedData)
+        : await auth.user?.related('responses').create(validatedData)
 
     return response.created({ data: responseForum })
   }
@@ -46,7 +49,7 @@ export default class ResponsesController {
   public async update({ request, auth, params, response }: HttpContextContract) {
     const discuss = await Response.query()
       .where('id', params.id)
-      // .apply((scope) => scope.visibleTo(auth.user))
+      .apply((scope) => scope.visibleTo(auth.user))
       .firstOrFail()
 
     const validatedData = await request.validate(UpdateResponseValidator)
@@ -54,5 +57,11 @@ export default class ResponsesController {
     discuss.merge(validatedData)
 
     return response.ok({ data: discuss })
+  }
+
+  public async destroy({ params, response }: HttpContextContract) {
+    const responseForum = await Response.findOrFail('id', params.id)
+
+    return response.ok({ data: await responseForum.delete() })
   }
 }

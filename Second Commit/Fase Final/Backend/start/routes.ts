@@ -15,11 +15,13 @@ Route.group(() => {
     Route.post('/preguntas', 'DiscussesController.store')
     Route.get('/preguntas/:id', 'DiscussesController.show')
     Route.patch('/preguntas/:id', 'DiscussesController.update')
+    Route.delete('/preguntas/:id', 'DiscussesController.delete')
 
     Route.get('/respuestas', 'ResponsesController.index')
     Route.post('/respuestas', 'ResponsesController.store')
     Route.get('/respuestas/:id', 'ResponsesController.show')
     Route.patch('/respuestas/:id', 'ResponsesController.update')
+    Route.delete('/respuestas/:id', 'ResponsesController.delete')
 
     Route.get('/votos', 'VotesController.index')
 

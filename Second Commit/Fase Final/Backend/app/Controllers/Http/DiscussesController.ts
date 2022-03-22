@@ -14,14 +14,12 @@ export default class DiscussesController {
   }
 
   public async store({ request, auth, response }: HttpContextContract) {
-    // const validatedData = await request.validate(DiscussValidator)
-    // const discuss = await auth.user?.related('discusses').create(validatedData)
-    // const discuss = await Discuss.create(validatedData)
-    // return discuss
-
     const validatedData = await request.validate(DiscussValidator)
 
-    const discuss = await auth.user?.related('discusses').create(validatedData)
+    const discuss =
+      auth.user?.role === 'admin'
+        ? await Discuss.create(validatedData)
+        : await auth.user?.related('discusses').create(validatedData)
 
     return response.created({ data: discuss })
   }
@@ -48,7 +46,7 @@ export default class DiscussesController {
   public async update({ request, auth, params, response }: HttpContextContract) {
     const discuss = await Discuss.query()
       .where('id', params.id)
-      // .apply((scope) => scope.visibleTo(auth.user))
+      .apply((scope) => scope.visibleTo(auth.user))
       .firstOrFail()
 
     const validatedData = await request.validate(UpdateDiscussValidator)
@@ -56,5 +54,14 @@ export default class DiscussesController {
     discuss.merge(validatedData)
 
     return response.ok({ data: discuss })
+  }
+
+  public async destroy({ params, auth, response }: HttpContextContract) {
+    const discuss = await Discuss.query()
+      .where('id', params.id)
+      .apply((scope) => scope.visibleTo(auth.user))
+      .firstOrFail()
+
+    return response.ok({ data: await discuss.delete() })
   }
 }

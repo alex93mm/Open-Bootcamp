@@ -50,7 +50,10 @@ export default class Discuss extends BaseModel {
   @hasMany(() => VoteDiscuss)
   public votediscusses: HasMany<typeof VoteDiscuss>
 
-  public static visibleTo = scope((query, user: User) => {
+  public static visibleTo = scope((query, user: User | undefined) => {
+    if (user === undefined) {
+      return
+    }
     if (user.role === 'admin') {
       return
     }

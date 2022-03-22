@@ -43,7 +43,10 @@ export default class Response extends BaseModel {
   @hasMany(() => VoteResponse)
   public voteresponses: HasMany<typeof VoteResponse>
 
-  public static visibleTo = scope((query, user: User) => {
+  public static visibleTo = scope((query, user: User | undefined) => {
+    if (user === undefined) {
+      return
+    }
     if (user.role === 'admin') {
       return
     }

@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, scope } from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
 import Response from './Response'
 
@@ -27,4 +27,14 @@ export default class VoteResponse extends BaseModel {
 
   @belongsTo(() => Response)
   public response: BelongsTo<typeof Response>
+
+  public static visibleTo = scope((query, user: User | undefined) => {
+    if (user === undefined) {
+      return
+    }
+    if (user.role === 'admin') {
+      return
+    }
+    query.where('userId', user.id)
+  })
 }
