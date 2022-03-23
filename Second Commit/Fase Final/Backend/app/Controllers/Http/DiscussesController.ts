@@ -1,14 +1,29 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import UnathorizedException from 'App/Exceptions/UnathorizedException'
 import Discuss from 'App/Models/Discuss'
 import DiscussValidator from 'App/Validators/CreateDiscussValidator'
+import SortValidator from 'App/Validators/SortValidator'
 import UpdateDiscussValidator from 'App/Validators/UpdateDiscussValidator'
 
 export default class DiscussesController {
-  public async index({ response }: HttpContextContract) {
+  public async index({ response, request }: HttpContextContract) {
+    const tema = request.input('tema_id')
+
+    const validatedData = await request.validate(SortValidator)
+    const sort = validatedData.sort || 'pinned'
+    const order = validatedData.order || 'desc'
+
     const discusses = await Discuss.query()
-      .orderBy('pinned', 'desc')
-      .preload('user')
-      .preload('responses')
+      .if(tema, (query) => {
+        query.where(tema)
+      })
+      .orderBy(sort, order)
+      .preload('user', (query) => {
+        query.select('id', 'username', 'avatar')
+      })
+      .withCount('responses', (countQuery) => {
+        countQuery.as('total_respuestas')
+      })
 
     return response.ok({ data: discusses })
   }
@@ -27,10 +42,8 @@ export default class DiscussesController {
   public async show({ params, response }: HttpContextContract) {
     const discuss = await Discuss.query()
       .where('id', params.id)
-      .preload('responses', (responsesQuery) => {
-        responsesQuery.preload('user', (userQuery) => {
-          userQuery.select('id', 'username', 'avatar')
-        })
+      .preload('user', (userQuery) => {
+        userQuery.select('id', 'username', 'avatar')
       })
       .withCount('votediscusses', (countQuery) => {
         countQuery.where('positive', true).as('TotalPositiveVotes')
@@ -44,12 +57,13 @@ export default class DiscussesController {
   }
 
   public async update({ request, auth, params, response }: HttpContextContract) {
-    const discuss = await Discuss.query()
-      .where('id', params.id)
-      .apply((scope) => scope.visibleTo(auth.user))
-      .firstOrFail()
+    const discuss = await Discuss.query().where('id', params.id).firstOrFail()
 
     const validatedData = await request.validate(UpdateDiscussValidator)
+
+    if (auth.user?.id !== discuss.userId && auth.user?.role !== 'admin') {
+      throw new UnathorizedException('Solo puedes actualizar tus propias preguntas')
+    }
 
     discuss.merge(validatedData)
 
@@ -57,11 +71,14 @@ export default class DiscussesController {
   }
 
   public async destroy({ params, auth, response }: HttpContextContract) {
-    const discuss = await Discuss.query()
-      .where('id', params.id)
-      .apply((scope) => scope.visibleTo(auth.user))
-      .firstOrFail()
+    const discuss = await Discuss.query().where('id', params.id).firstOrFail()
 
-    return response.ok({ data: await discuss.delete() })
+    if (auth.user?.id !== discuss.userId && auth.user?.role !== 'admin') {
+      throw new UnathorizedException('Solo puedes eliminar tus propias preguntas')
+    }
+
+    await discuss.delete()
+
+    return response.noContent()
   }
 }
