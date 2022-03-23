@@ -1,16 +1,7 @@
 import { DateTime } from 'luxon'
-import {
-  BaseModel,
-  BelongsTo,
-  belongsTo,
-  column,
-  HasMany,
-  hasMany,
-  scope,
-} from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import Course from './Course'
 import Discuss from './Discuss'
-import User from './User'
 
 export default class Theme extends BaseModel {
   @column({ isPrimary: true })
