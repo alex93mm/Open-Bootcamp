@@ -1,14 +1,14 @@
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class UpdateResponseValidator {
+export default class UpdateVoteValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    content: schema.string.optional(),
-    userId: schema.number.optional([rules.exists({ table: 'users', column: 'id' })]),
+    userId: schema.number.optional(),
+    positive: schema.boolean.optional(),
     discussId: schema.number.optional([rules.exists({ table: 'discusses', column: 'id' })]),
-    pinned: schema.boolean.optional(),
+    responseId: schema.number.optional([rules.exists({ table: 'responses', column: 'id' })]),
   })
 
   public messages = {}
