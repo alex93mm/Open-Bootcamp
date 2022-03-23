@@ -14,7 +14,7 @@ export default class VotesDiscussController {
     return response.ok({ data: { votesResponse } })
   }
 
-  public async store({ params, auth, response, request }: HttpContextContract) {
+  public async store({ auth, response, request }: HttpContextContract) {
     const validatedData = await request.validate(VoteValidator)
 
     const vote =
