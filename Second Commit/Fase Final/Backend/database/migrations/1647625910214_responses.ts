@@ -9,7 +9,13 @@ export default class Responses extends BaseSchema {
       table.string('content')
       table.boolean('pinned')
       table.integer('user_id').unsigned().references('id').inTable('users').notNullable()
-      table.integer('discuss_id').unsigned().references('id').inTable('discusses').notNullable()
+      table
+        .integer('discuss_id')
+        .unsigned()
+        .references('id')
+        .inTable('discusses')
+        .notNullable()
+        .onDelete('CASCADE')
       table.timestamps(true)
     })
   }

@@ -9,7 +9,7 @@ export default class Discusses extends BaseSchema {
       table.string('title').notNullable()
       table.string('content').notNullable()
       table.boolean('pinned').notNullable()
-      table.integer('theme_id').unsigned().references('id').inTable('themes')
+      table.integer('theme_id').unsigned().references('id').inTable('themes').onDelete('CASCADE')
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.timestamps(true)
     })

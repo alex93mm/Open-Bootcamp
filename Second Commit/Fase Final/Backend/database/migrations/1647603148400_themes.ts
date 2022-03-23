@@ -6,7 +6,7 @@ export default class Themes extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
-      table.integer('course_id').unsigned().references('id').inTable('courses')
+      table.integer('course_id').unsigned().references('id').inTable('courses').onDelete('CASCADE')
       table.integer('module_id').unsigned().nullable()
       table.string('title').notNullable()
       table.string('subtitle').notNullable()
