@@ -9,7 +9,6 @@ export default class UpdateDiscussValidator {
     content: schema.string.optional(),
     userId: schema.number.optional([rules.exists({ table: 'users', column: 'id' })]),
     themeId: schema.number.optional([rules.exists({ table: 'themes', column: 'id' })]),
-    pinned: schema.boolean.optional(),
   })
 
   public messages = {}

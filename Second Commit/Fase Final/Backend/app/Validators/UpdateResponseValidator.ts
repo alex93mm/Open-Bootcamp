@@ -8,7 +8,6 @@ export default class UpdateResponseValidator {
     content: schema.string.optional(),
     userId: schema.number.optional([rules.exists({ table: 'users', column: 'id' })]),
     discussId: schema.number.optional([rules.exists({ table: 'discusses', column: 'id' })]),
-    pinned: schema.boolean.optional(),
   })
 
   public messages = {}
