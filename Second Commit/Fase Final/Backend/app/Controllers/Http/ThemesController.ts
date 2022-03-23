@@ -2,6 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Theme from 'App/Models/Theme'
 import ThemeValidator from 'App/Validators/CreateThemeValidator'
 import SortValidator from 'App/Validators/SortValidator'
+import UpdateThemeUserValidator from 'App/Validators/UpdateThemeUserValidator'
 import UpdateThemeValidator from 'App/Validators/UpdateThemeValidator'
 
 export default class ThemesController {
@@ -26,7 +27,7 @@ export default class ThemesController {
     return response.ok({ data: themes })
   }
 
-  public async store({ request, auth, response }: HttpContextContract) {
+  public async store({ request, response }: HttpContextContract) {
     const validatedData = await request.validate(ThemeValidator)
 
     const theme = await Theme.create(validatedData)
@@ -34,7 +35,7 @@ export default class ThemesController {
     return response.created({ data: theme })
   }
 
-  public async show({ params, request, response }: HttpContextContract) {
+  public async show({ params, response }: HttpContextContract) {
     const theme = await Theme.query()
       .where('id', params.id)
       .preload('discusses', (discussQuery) => {
@@ -48,10 +49,12 @@ export default class ThemesController {
     return response.ok({ data: { theme, total_respuestas: theme.$extras.TotalRespuestas } })
   }
 
-  public async update({ request, params, response }: HttpContextContract) {
+  public async update({ request, auth, params, response }: HttpContextContract) {
     const theme = await Theme.findOrFail('id', params.id)
 
-    const validatedData = await request.validate(UpdateThemeValidator)
+    const validator = auth.user?.role === 'admin' ? UpdateThemeValidator : UpdateThemeUserValidator
+
+    const validatedData = await request.validate(validator)
 
     theme.merge(validatedData)
 

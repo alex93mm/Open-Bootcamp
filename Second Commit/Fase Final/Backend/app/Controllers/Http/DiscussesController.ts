@@ -3,6 +3,7 @@ import UnathorizedException from 'App/Exceptions/UnathorizedException'
 import Discuss from 'App/Models/Discuss'
 import DiscussValidator from 'App/Validators/CreateDiscussValidator'
 import SortValidator from 'App/Validators/SortValidator'
+import UpdateDiscussUserValidator from 'App/Validators/UpdateDiscussUserValidator'
 import UpdateDiscussValidator from 'App/Validators/UpdateDiscussValidator'
 
 export default class DiscussesController {
@@ -59,7 +60,10 @@ export default class DiscussesController {
   public async update({ request, auth, params, response }: HttpContextContract) {
     const discuss = await Discuss.query().where('id', params.id).firstOrFail()
 
-    const validatedData = await request.validate(UpdateDiscussValidator)
+    const validator =
+      auth.user?.role === 'admin' ? UpdateDiscussValidator : UpdateDiscussUserValidator
+
+    const validatedData = await request.validate(validator)
 
     if (auth.user?.id !== discuss.userId && auth.user?.role !== 'admin') {
       throw new UnathorizedException('Solo puedes actualizar tus propias preguntas')

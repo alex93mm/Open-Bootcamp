@@ -3,6 +3,7 @@ import UnathorizedException from 'App/Exceptions/UnathorizedException'
 import Response from 'App/Models/Response'
 import ResponseValidator from 'App/Validators/CreateResponseValidator'
 import SortValidator from 'App/Validators/SortValidator'
+import UpdateResponseUserValidator from 'App/Validators/UpdateResponseUserValidator'
 import UpdateResponseValidator from 'App/Validators/UpdateResponseValidator'
 
 export default class ResponsesController {
@@ -59,7 +60,10 @@ export default class ResponsesController {
   public async update({ request, auth, params, response }: HttpContextContract) {
     const responseForum = await Response.query().where('id', params.id).firstOrFail()
 
-    const validatedData = await request.validate(UpdateResponseValidator)
+    const validator =
+      auth.user?.role === 'admin' ? UpdateResponseValidator : UpdateResponseUserValidator
+
+    const validatedData = await request.validate(validator)
 
     if (auth.user?.id !== responseForum.userId && auth.user?.role !== 'admin') {
       throw new UnathorizedException('Solo puedes actualizar tus propias respuestas')
