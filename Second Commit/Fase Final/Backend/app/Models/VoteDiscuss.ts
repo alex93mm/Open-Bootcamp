@@ -27,14 +27,4 @@ export default class VoteDiscuss extends BaseModel {
 
   @belongsTo(() => Discuss)
   public discuss: BelongsTo<typeof Discuss>
-
-  public static visibleTo = scope((query, user: User | undefined) => {
-    if (user === undefined) {
-      return
-    }
-    if (user.role === 'admin') {
-      return
-    }
-    query.where('userId', user.id)
-  })
 }
